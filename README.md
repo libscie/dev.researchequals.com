@@ -1,6 +1,6 @@
-# README
+# dev.researchequals.com
 
-Welcome to [RedwoodJS](https://redwoodjs.com)!
+This repository contains the second iteration of ResearchEquals.com that we are developing. For the in production code, please see `libscie/ResearchEquals.com`.
 
 > **Prerequisites**
 >
