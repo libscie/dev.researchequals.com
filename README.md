@@ -1,6 +1,6 @@
 # dev.researchequals.com
 
-This repository contains the second iteration of ResearchEquals.com that we are developing. For the in production code, please see `libscie/ResearchEquals.com`.
+This repository contains the second iteration of ResearchEquals.com that we are developing. For the in production code (`v1`), please see `libscie/ResearchEquals.com`.
 
 > **Prerequisites**
 >
@@ -11,43 +11,10 @@ Start by installing dependencies:
 
 ```
 yarn install
-```
-
-Then start the development server:
-
-```
-yarn redwood dev
-```
-
-Your browser should automatically open to [http://localhost:8910](http://localhost:8910) where you'll see the Welcome Page, which links out to many great resources.
-
-> **The Redwood CLI**
->
-> Congratulations on running your first Redwood CLI command! From dev to deploy, the CLI is with you the whole way. And there's quite a few commands at your disposal:
->
-> ```
-> yarn redwood --help
-> ```
->
-> For all the details, see the [CLI reference](https://redwoodjs.com/docs/cli-commands).
-
-## Prisma and the database
-
-Redwood wouldn't be a full-stack framework without a database. It all starts with the schema. Open the [`schema.prisma`](api/db/schema.prisma) file in `api/db` and replace the `UserExample` model with the following `Post` model:
-
-```prisma
-model Post {
-  id        Int      @id @default(autoincrement())
-  title     String
-  body      String
-  createdAt DateTime @default(now())
-}
-```
-
-Redwood uses [Prisma](https://www.prisma.io/), a next-gen Node.js and TypeScript ORM, to talk to the database. Prisma's schema offers a declarative way of defining your app's data models. And Prisma [Migrate](https://www.prisma.io/migrate) uses that schema to make database migrations hassle-free:
-
-```
+yarn rw dev
 yarn rw prisma migrate dev
+```
+
 
 # ...
 
