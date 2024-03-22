@@ -19,27 +19,22 @@ const HomePage = () => {
       <nav id="navbar">
         <ul>
           <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Services</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
+            <Link to={routes.home()}>Home</Link>
           </li>
         </ul>
       </nav>
 
       <footer>
-        <Link href="/terms">Terms</Link>
-        <Link href="/terms">Privacy</Link>
-        <Link href="/terms">Terms</Link>
-        <Link href="/terms">Terms</Link>
-        <Link href="/terms">Terms</Link>
-        <Link href="/terms">Terms</Link>
+        <Link to={routes.codeOfConduct()}>codeOfConduct</Link>
+        <Link to={routes.dataProcessingAgreement()}>
+          dataProcessingAgreement
+        </Link>
+        <Link to={routes.imprint()}>imprint</Link>
+        <Link to={routes.poisonPill()}>poisonPill</Link>
+        <Link to={routes.privacy()}>privacy</Link>
+        <Link to={routes.rightOfWithdrawal()}>rightOfWithdrawal</Link>
+        <Link to={routes.security()}>security</Link>
+        <Link to={routes.terms()}>Terms</Link>
       </footer>
     </>
   )
