@@ -34,6 +34,6 @@
     "../.redwood/types/includes/all-*",
     "../.redwood/types/includes/web-*",
     "../types",
-    "./types"
+    "./types", "./*.ts"
   ]
 }

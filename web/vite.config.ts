@@ -11,6 +11,7 @@ dns.setDefaultResultOrder('verbatim')
 
 const viteConfig: UserConfig = {
   plugins: [redwood()],
+  assetsInclude: ['**/*.md'],
 }
 
 export default defineConfig(viteConfig)

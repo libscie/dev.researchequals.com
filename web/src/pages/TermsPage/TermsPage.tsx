@@ -1,19 +1,21 @@
+import { useState } from 'react'
+
 import { Link, routes } from '@redwoodjs/router'
 import { Metadata } from '@redwoodjs/web'
 
+import terms from './terms.md'
+
 const TermsPage = () => {
+  const [markdown, setMarkdown] = useState('')
+  fetch(terms)
+    .then((response) => response.text())
+    .then((text) => setMarkdown(text))
   return (
     <>
       <Metadata title="Terms" description="Terms page" />
 
       <h1>TermsPage</h1>
-      <p>
-        Find me in <code>./web/src/pages/TermsPage/TermsPage.tsx</code>
-      </p>
-      <p>
-        My default route is named <code>terms</code>, link to me with `
-        <Link to={routes.terms()}>Terms</Link>`
-      </p>
+      <span>{markdown}</span>
     </>
   )
 }
