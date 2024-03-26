@@ -6,7 +6,9 @@ const TermsPage = () => {
   return (
     <>
       <Metadata title="Terms" description="Terms page" />
-      <ReactComponent />
+      <main>
+        <ReactComponent />
+      </main>
     </>
   )
 }
