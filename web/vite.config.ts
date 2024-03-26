@@ -2,6 +2,7 @@ import dns from 'dns'
 
 import type { UserConfig } from 'vite'
 import { defineConfig } from 'vite'
+import mdPlugin, { Mode } from 'vite-plugin-markdown'
 
 import redwood from '@redwoodjs/vite'
 
@@ -10,8 +11,10 @@ import redwood from '@redwoodjs/vite'
 dns.setDefaultResultOrder('verbatim')
 
 const viteConfig: UserConfig = {
-  plugins: [redwood()],
-  assetsInclude: ['**/*.md'],
+  plugins: [
+    redwood(),
+    mdPlugin({ mode: [Mode.HTML, Mode.MARKDOWN, Mode.TOC, Mode.REACT] }),
+  ],
 }
 
 export default defineConfig(viteConfig)
