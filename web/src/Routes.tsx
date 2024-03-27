@@ -9,7 +9,7 @@ const Routes = () => {
       <Set wrap={MarketingLayout}>
         <Route path="/" page={HomePage} name="home" />
       </Set>
-      <Set wrap={MarkdownLayout} prerender>
+      <Set wrap={MarkdownLayout}>
         <Route path="/legal/code-of-conduct" page={CodeOfConductPage} name="codeOfConduct" />
         <Route path="/legal/data-processing-agreement" page={DataProcessingAgreementPage} name="dataProcessingAgreement" />
         <Route path="/legal/imprint" page={ImprintPage} name="imprint" />
