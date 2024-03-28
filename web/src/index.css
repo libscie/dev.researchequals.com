@@ -1,3 +1,16 @@
+/**
+ * START --- SETUP TAILWINDCSS EDIT
+ *
+ * `yarn rw setup ui tailwindcss` placed these directives here
+ * to inject Tailwind's styles into your CSS.
+ * For more information, see: https://tailwindcss.com/docs/installation
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/**
+ * END --- SETUP TAILWINDCSS EDIT
+ */
 /* Font stacks from: https://modernfontstacks.com/ */
 
 body {
@@ -52,7 +65,7 @@ summary {
 
 nav {
   position: fixed;
-  padding: 10px 0;
+  padding: 10px 0 10px 0;
   background: #2e1065;
   max-width: calc(100vw - 2rem);
   width: 100%;
