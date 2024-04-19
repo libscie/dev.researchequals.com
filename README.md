@@ -2,19 +2,49 @@
 
 This repository contains the second iteration of ResearchEquals.com that we are developing. For the in production code (`v1`), please see `libscie/ResearchEquals.com`.
 
-> **Prerequisites**
->
-> - Redwood requires [Node.js](https://nodejs.org/en/) (=20.x) and [Yarn](https://yarnpkg.com/)
-> - Are you on Windows? For best results, follow our [Windows development setup](https://redwoodjs.com/docs/how-to/windows-development-setup) guide
+<details>
+  <summary>macOS installation</summary>
 
-Start by installing dependencies:
+Ensure you have `brew` installed before following this guide.
 
-```
+```sh
+# Install nodejs + npm
+brew install nodejs
+
+# Install corepack (required for yarn)
+npm install -g corepack
+# Enable yarn
+corepack enable
+
+# Install dependencies
 yarn install
-yarn rw dev
-yarn rw prisma migrate dev
-```
 
+# Install mysql
+brew install mysql
+# Add local variables
+cp .env.example .env
+echo "DATABASE_URL=mysql://root:@localhost:3306/dev-db-researchequals" >> .env
+
+# Apply the migrations to your database
+yarn rw prisma migrate dev
+# Start the development environment
+yarn rw dev
+```
+</details>
+
+<details>
+  <summary>Linux installation</summary>
+
+To be added - see issue #6.
+
+</details>
+
+<details>
+  <summary>Windows installation</summary>
+
+To be added - see issue #5.
+
+</details>
 
 # ...
 
