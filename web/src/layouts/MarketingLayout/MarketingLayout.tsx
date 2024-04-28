@@ -1,4 +1,5 @@
 import Footer from 'src/components/Footer/Footer'
+import NavigationBar from 'src/components/NavigationBar/NavigationBar'
 
 type MarketingLayoutProps = {
   children?: React.ReactNode
@@ -6,6 +7,7 @@ type MarketingLayoutProps = {
 
 const MarketingLayout = ({ children }: MarketingLayoutProps) => {
   return <>
+    <NavigationBar />
     {children}
     <Footer />
   </>

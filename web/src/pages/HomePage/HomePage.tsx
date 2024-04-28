@@ -15,13 +15,6 @@ const HomePage = () => {
           <Link to={routes.home()}>Home</Link>`
         </p>
       </main>
-      <nav id="navbar">
-        <ul>
-          <li>
-            <Link to={routes.home()}>Home</Link>
-          </li>
-        </ul>
-      </nav>
     </>
   )
 }

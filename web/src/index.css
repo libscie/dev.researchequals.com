@@ -13,6 +13,9 @@
  */
 /* Font stacks from: https://modernfontstacks.com/ */
 
+button {
+
+}
 body {
   background-color: #f5f3ff;
   background-image: radial-gradient(circle at 1px 1px, #ddd6fe 1px, transparent 0);
@@ -50,4 +53,12 @@ h1, h2, h3, h4, h5 {
 
 footer a:visited {
   color: #f5f3ff;
+}
+
+nav {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
 }
