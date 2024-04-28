@@ -20634,6 +20634,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-rough-notation@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "react-rough-notation@npm:1.0.5"
+  dependencies:
+    rough-notation: "npm:^0.5.1"
+  peerDependencies:
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  checksum: 10c0/a2e30d7c54d3aea056aaf4e310b827e915e004b878b93837ccc68c04e8005074743d0d6b7c1384619245b7f58e97d7e17c2a64175bd3f2e22390d005a10e08c1
+  languageName: node
+  linkType: hard
+
 "react-style-singleton@npm:^2.2.1":
   version: 2.2.1
   resolution: "react-style-singleton@npm:2.2.1"
@@ -21330,6 +21342,13 @@ __metadata:
     prettier-plugin-tailwindcss: "npm:0.4.1"
   languageName: unknown
   linkType: soft
+
+"rough-notation@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "rough-notation@npm:0.5.1"
+  checksum: 10c0/ca1de80e62c330a76618e8ede384ed0683643f87741c7c5a38b9e8ffc2f196efb80abf845a660c81d56a7d4dc8d789e6a12c35be6422efef3683d6b710df73b8
+  languageName: node
+  linkType: hard
 
 "run-async@npm:^2.4.0":
   version: 2.4.1
@@ -24247,6 +24266,7 @@ __metadata:
     postcss-loader: "npm:^8.1.1"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
+    react-rough-notation: "npm:^1.0.5"
     tailwindcss: "npm:^3.4.2"
     vite-plugin-markdown: "npm:^2.2.0"
   languageName: unknown
