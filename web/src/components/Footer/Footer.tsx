@@ -7,11 +7,11 @@ const Footer = () => {
   const date = new Date()
 
   return (
-    <footer className='grid md:flex bg-violet-900 text-violet-50 p-2 font-serif'>
+    <footer className='grid md:flex bg-violet-900 text-violet-50 p-2 font-serif pb-[7rem]'>
         <FooterColumn flexGrow={false}>
           <ResearchEqualsLogoSymbol />
           <p>ResearchEquals</p>
-          <span className="flex items-center justify-center gap-1 text-sm text-violet-50 lg:justify-start ">
+          <span className="flex gap-1 text-sm text-violet-50 lg:justify-start ">
             {date.getFullYear()}
             <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank" rel='noreferrer'>
               <svg

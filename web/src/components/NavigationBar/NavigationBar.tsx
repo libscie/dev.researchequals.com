@@ -6,12 +6,12 @@ const NavigationBar = () => {
       <div className="w-5/6 lg:w-2/3 bg-violet-200 bg-opacity-80 mx-auto rounded-[9999px] h-16 pl-8 pr-4 align-middle backdrop-blur-sm font-serif text-xl text-violet-950">
        <div className="h-full flex items-center">
           <nav className="flex-grow flex">
-            <div className="">
+            <div className="hidden sm:inline [&>a]:text-violet-950">
               <Link to={routes.home()}  className="mx-2">
                 Home
               </Link>
             </div>
-            <div className="flex-grow mx-auto text-center">
+            <div className="flex-grow mx-auto text-left sm:text-center [&>a]:text-violet-950">
               <Link to={routes.home()}  className="mx-2">
                 Read
               </Link>
