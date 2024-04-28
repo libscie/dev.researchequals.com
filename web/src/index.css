@@ -21,7 +21,6 @@ body {
   color: #2e1065;
   font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
   font-weight: normal;
-  padding: 2rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,4 +46,8 @@ h1 {
 h1, h2, h3, h4, h5 {
   font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
   font-weight: normal;
+}
+
+footer a:visited {
+  color: #fff;
 }
