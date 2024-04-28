@@ -1,21 +1,7 @@
-/**
- * START --- SETUP TAILWINDCSS EDIT
- *
- * `yarn rw setup ui tailwindcss` placed these directives here
- * to inject Tailwind's styles into your CSS.
- * For more information, see: https://tailwindcss.com/docs/installation
- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/**
- * END --- SETUP TAILWINDCSS EDIT
- */
-/* Font stacks from: https://modernfontstacks.com/ */
 
-button {
-
-}
 body {
   background-color: #f5f3ff;
   background-image: radial-gradient(circle at 1px 1px, #ddd6fe 1px, transparent 0);
@@ -25,14 +11,6 @@ body {
   font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
   font-weight: normal;
 }
-/*
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #2e1065;
-    background-image: radial-gradient(circle at 1px 1px, #5b21b6 1px, transparent 0);
-    color: #f5f3ff;
-  }
-} */
 
 main, article {
   min-height: 100vh;
@@ -51,14 +29,6 @@ h1, h2, h3, h4, h5 {
   font-weight: normal;
 }
 
-footer a:visited {
+footer a a:visited {
   color: #f5f3ff;
-}
-
-nav {
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
-  user-drag: none;
 }
