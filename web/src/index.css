@@ -17,11 +17,10 @@ main, article {
 }
 
 h1 {
-  margin: 0;
-  padding: 0;
-  max-width: 700px;
-  line-height: 4rem;
-  font-size:4rem;
+  /* margin: 0; */
+  /* padding: 0; */
+  /* line-height: 4rem; */
+  font-size: 4rem;
 }
 
 h1, h2, h3, h4, h5 {
@@ -31,4 +30,10 @@ h1, h2, h3, h4, h5 {
 
 footer a, footer a:visited {
   color: #f5f3ff;
+}
+
+
+hr {
+  border: 1px solid #2e1065;
+  width: 40%;
 }
