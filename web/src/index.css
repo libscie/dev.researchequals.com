@@ -22,14 +22,14 @@ body {
   font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
   font-weight: normal;
 }
-
+/*
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #2e1065;
     background-image: radial-gradient(circle at 1px 1px, #5b21b6 1px, transparent 0);
     color: #f5f3ff;
   }
-}
+} */
 
 main, article {
   min-height: 100vh;
