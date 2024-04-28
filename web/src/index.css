@@ -29,6 +29,6 @@ h1, h2, h3, h4, h5 {
   font-weight: normal;
 }
 
-footer a a:visited {
+footer a, footer a:visited {
   color: #f5f3ff;
 }
