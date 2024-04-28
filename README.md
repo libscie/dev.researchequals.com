@@ -46,8 +46,33 @@ To be added - see issue #5.
 
 </details>
 
-# ...
+## Development
 
+```
+yarn rw install
+
+yarn rw dev
+```
+
+Here are some common actions:
+
+```
+# Create a new component
+yarn rw g <component>
+
+# Migrate the database
+yarn rw prisma migrate dev
+# Open the database studio env
+yarn rw prisma studio
+
+
+# TODO - sort these commands
+yarn rw g scaffold <model>
+```
+
+
+<details>
+<summary>Redwood description</summary>
 ? Enter a name for the new migration: › create posts
 ```
 
@@ -117,3 +142,4 @@ The best way to learn Redwood is by going through the comprehensive [tutorial](h
 
 - Stay updated: read [Forum announcements](https://community.redwoodjs.com/c/announcements/5), follow us on [Twitter](https://twitter.com/redwoodjs), and subscribe to the [newsletter](https://redwoodjs.com/newsletter)
 - [Learn how to contribute](https://redwoodjs.com/docs/contributing)
+</details>
