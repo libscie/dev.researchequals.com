@@ -7,7 +7,7 @@ const Footer = () => {
   const date = new Date()
 
   return (
-    <footer className='grid md:flex bg-violet-900 text-white p-2'>
+    <footer className='grid md:flex bg-violet-900 text-violet-50 p-2 font-serif'>
         <FooterColumn flexGrow={false}>
           <ResearchEqualsLogoSymbol />
           <p>ResearchEquals</p>
@@ -45,19 +45,18 @@ const Footer = () => {
         </FooterColumn>
         <FooterColumn flexGrow={false}>
           <div>
-          <a href="https://discord.gg/SefsGJWWSw" className='mx-1'  target="_blank" rel='noreferrer'>
-            <LogoDiscord size={32} />
-          </a>
-          <a href="https://github.com/libscie/dev.researchequals.com" className='mx-1'  target="_blank" rel='noreferrer'>
-            <LogoGithub size={32} />
-          </a>
-          <a href="https://www.linkedin.com/showcase/researchequals" className='mx-1'  target="_blank" rel='noreferrer'>
-            <LogoLinkedin size={32} />
-          </a>
-          <a href="https://akademienl.social/@ResearchEquals" className='mx-1'  target="_blank" rel='noreferrer'>
-            <LogoMastodon size={32} />
-          </a>
-
+            <a href="https://discord.gg/SefsGJWWSw" className='mx-1'  target="_blank" rel='noreferrer'>
+              <LogoDiscord size={32} />
+            </a>
+            <a href="https://github.com/libscie/dev.researchequals.com" className='mx-1'  target="_blank" rel='noreferrer'>
+              <LogoGithub size={32} />
+            </a>
+            <a href="https://www.linkedin.com/showcase/researchequals" className='mx-1'  target="_blank" rel='noreferrer'>
+              <LogoLinkedin size={32} />
+            </a>
+            <a href="https://akademienl.social/@ResearchEquals" className='mx-1'  target="_blank" rel='noreferrer'>
+              <LogoMastodon size={32} />
+            </a>
           </div>
           <div>
             <Link to={routes.imprint()}>Imprint</Link>

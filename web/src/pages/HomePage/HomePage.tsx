@@ -22,8 +22,6 @@ const HomePage = () => {
           </li>
         </ul>
       </nav>
-
-
     </>
   )
 }
