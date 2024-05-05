@@ -9,6 +9,7 @@ const MarketingLayout = ({ children }: MarketingLayoutProps) => {
   return <>
     <NavigationBar />
     {children}
+    <hr/>
     <Footer />
   </>
 }
