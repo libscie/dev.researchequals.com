@@ -7,6 +7,7 @@ type MarkdownLayoutProps = {
 const MarkdownLayout = ({ children }: MarkdownLayoutProps) => {
   return <>
     {children}
+    <hr />
     <Footer />
     </>
 }
