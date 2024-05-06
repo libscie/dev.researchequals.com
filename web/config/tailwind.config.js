@@ -10,9 +10,9 @@ module.exports = {
     extend: {
       // Font stacks from: https://modernfontstacks.com/
       fontFamily: {
-        'serif': 'Iowan Old Style, Palatino Linotype, URW Palladio L, P052',
-        'sans': 'Inter, Roboto, Helvetica Neue, Arial Nova, Nimbus Sans, Arial, sans-serif',
-      }
+        serif: 'Iowan Old Style, Palatino Linotype, URW Palladio L, P052',
+        sans: 'Inter, Roboto, Helvetica Neue, Arial Nova, Nimbus Sans, Arial, sans-serif',
+      },
     },
   },
   plugins: [],

@@ -4,34 +4,42 @@
 
 body {
   background-color: #f5f3ff;
-  background-image: radial-gradient(circle at 1px 1px, #ddd6fe 1px, transparent 0);
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    #ddd6fe 1px,
+    transparent 0
+  );
   background-size: 2rem 2rem;
   margin: 0;
   color: #2e1065;
-  font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans',
+    Arial, sans-serif;
   font-weight: normal;
 }
 
-main, article {
+main,
+article {
   min-height: 100vh;
 }
 
 h1 {
-  /* margin: 0; */
-  /* padding: 0; */
-  /* line-height: 4rem; */
   font-size: 4rem;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052,
+    serif;
   font-weight: normal;
 }
 
-footer a, footer a:visited {
+footer a,
+footer a:visited {
   color: #2e1065;
 }
-
 
 hr {
   border: 1px solid #2e1065;

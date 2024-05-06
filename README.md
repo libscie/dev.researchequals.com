@@ -30,6 +30,7 @@ yarn rw prisma migrate dev
 # Start the development environment
 yarn rw dev
 ```
+
 </details>
 
 <details>
@@ -69,7 +70,6 @@ yarn rw prisma studio
 # TODO - sort these commands
 yarn rw g scaffold <model>
 ```
-
 
 <details>
 <summary>Redwood description</summary>
@@ -118,7 +118,7 @@ It'd be hard to scale from side project to startup without a few tests. Redwood 
 yarn rw test
 ```
 
-To make the integration even more seamless, Redwood augments Jest with database [scenarios](https://redwoodjs.com/docs/testing#scenarios)  and [GraphQL mocking](https://redwoodjs.com/docs/testing#mocking-graphql-calls).
+To make the integration even more seamless, Redwood augments Jest with database [scenarios](https://redwoodjs.com/docs/testing#scenarios) and [GraphQL mocking](https://redwoodjs.com/docs/testing#mocking-graphql-calls).
 
 ## Ship it
 
@@ -147,6 +147,5 @@ The best way to learn Redwood is by going through the comprehensive [tutorial](h
 <details>
 <summary>Developer tools</summary>
 
-* https://placeholder.pics/
-*
-</details>
+- https://placeholder.pics/
+- </details>

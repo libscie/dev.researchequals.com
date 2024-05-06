@@ -108,10 +108,10 @@ If the processing involves personal data revealing racial or ethnic origin, poli
 
 (c) In addition to the processor's obligation to assist the controller pursuant to Clause 8(b), the processor shall furthermore assist the controller in ensuring compliance with the following obligations, taking into account the nature of the data processing and the information available to the processor:
 
-  1. the obligation to carry out an assessment of the impact of the envisaged processing operations on the protection of personal data (a ‘data protection impact assessment') where a type of processing is likely to result in a high risk to the rights and freedoms of natural persons;
-  2. the obligation to consult the competent supervisory authority/ies prior to processing where a data pro-tection impact assessment indicates that the processing would result in a high risk in the absence of measures taken by the controller to mitigate the risk;
-  3. the obligation to ensure that personal data is accurate and up to date, by informing the controller with-out delay if the processor becomes aware that the personal data it is processing is inaccurate or has become outdated;
-  4. the obligations in Article 32 of Regulation (EU) 2016/679.
+1. the obligation to carry out an assessment of the impact of the envisaged processing operations on the protection of personal data (a ‘data protection impact assessment') where a type of processing is likely to result in a high risk to the rights and freedoms of natural persons;
+2. the obligation to consult the competent supervisory authority/ies prior to processing where a data pro-tection impact assessment indicates that the processing would result in a high risk in the absence of measures taken by the controller to mitigate the risk;
+3. the obligation to ensure that personal data is accurate and up to date, by informing the controller with-out delay if the processor becomes aware that the personal data it is processing is inaccurate or has become outdated;
+4. the obligations in Article 32 of Regulation (EU) 2016/679.
 
 (d) The Parties shall set out in Annex III the appropriate technical and organisational measures by which the processor is required to assist the controller in the application of this Clause as well as the scope and the extent of the assistance required.
 
@@ -127,9 +127,9 @@ In the event of a personal data breach concerning data processed by the controll
 
 (b) in obtaining the following information which, pursuant to Article 33(3) of Regulation (EU) 2016/679, shall be stated in the controller's notification, and must at least include:
 
-  1. the nature of the personal data including where possible, the categories and approximate number of data subjects concerned and the categories and approximate number of personal data records concerned;
-  2. the likely consequences of the personal data breach;
-  3. the measures taken or proposed to be taken by the controller to address the personal data breach, including, where appropriate, measures to mitigate its possible adverse effects.
+1. the nature of the personal data including where possible, the categories and approximate number of data subjects concerned and the categories and approximate number of personal data records concerned;
+2. the likely consequences of the personal data breach;
+3. the measures taken or proposed to be taken by the controller to address the personal data breach, including, where appropriate, measures to mitigate its possible adverse effects.
 
 Where, and insofar as, it is not possible to provide all this information at the same time, the initial notification shall contain the information then available and further information shall, as it becomes available, subsequently be provided without undue delay.
 
@@ -157,9 +157,9 @@ The Parties shall set out in Annex III all other elements to be provided by the 
 
 (b) The controller shall be entitled to terminate the contract insofar as it concerns processing of personal data in accordance with these Clauses if:
 
-  1. the processing of personal data by the processor has been suspended by the controller pursuant to point (a) and if compliance with these Clauses is not restored within a reasonable time and in any event within one month following suspension;
-  2. the processor is in substantial or persistent breach of these Clauses or its obligations under Regulation (EU) 2016/679 and/or Regulation (EU) 2018/1725;
-  3. the processor fails to comply with a binding decision of a competent court or the competent supervisory authority/ies regarding its obligations pursuant to these Clauses or to Regulation (EU) 2016/679 and/or Regulation (EU) 2018/1725.
+1. the processing of personal data by the processor has been suspended by the controller pursuant to point (a) and if compliance with these Clauses is not restored within a reasonable time and in any event within one month following suspension;
+2. the processor is in substantial or persistent breach of these Clauses or its obligations under Regulation (EU) 2016/679 and/or Regulation (EU) 2018/1725;
+3. the processor fails to comply with a binding decision of a competent court or the competent supervisory authority/ies regarding its obligations pursuant to these Clauses or to Regulation (EU) 2016/679 and/or Regulation (EU) 2018/1725.
 
 (c) The processor shall be entitled to terminate the contract insofar as it concerns processing of personal data under these Clauses where, after having informed the controller that its instructions infringe applicable legal requirements in accordance with Clause 7.1 (b), the controller insists on compliance with the instructions.
 
@@ -169,11 +169,11 @@ The Parties shall set out in Annex III all other elements to be provided by the 
 
 ### List of parties
 
-**Controller(s):** *[Identity and contact details of the controller(s), and, where applicable, of the controller's data protection officer]*
+**Controller(s):** _[Identity and contact details of the controller(s), and, where applicable, of the controller's data protection officer]_
 
 The User as defined in [the Agreement](https://researchequals.com/terms) above.
 
-**Processor(s):** *[Identity and contact details of the processor(s) and, where applicable, of the processor's data protection officer]*
+**Processor(s):** _[Identity and contact details of the processor(s) and, where applicable, of the processor's data protection officer]_
 
 LibScie as defined in [the Agreement](https://researchequals.com/terms) above.
 
@@ -189,7 +189,7 @@ LibScie as defined in [the Agreement](https://researchequals.com/terms) above.
 
 - Any categories of personal data contained in the Content and Research Modules
 
-*Sensitive data processed (if applicable) and applied restrictions or safeguards that fully take into consideration the nature of the data and the risks involved, such as for instance strict purpose limitation, access restrictions (including access only for staff having followed specialised training), keeping a record of access to the data, restrictions for onward transfers or additional security measures.*
+_Sensitive data processed (if applicable) and applied restrictions or safeguards that fully take into consideration the nature of the data and the risks involved, such as for instance strict purpose limitation, access restrictions (including access only for staff having followed specialised training), keeping a record of access to the data, restrictions for onward transfers or additional security measures._
 
 - The categories of personal data may include sensitive data depending on the Content uploaded by the User. Since LibScie has no knowledge of the specific categories processed it lies in the User's responsibility to ensure that the safeguards are sufficient to process the specific categories of personal date.
 
@@ -225,20 +225,20 @@ The controller has authorised the use of the following sub-processors:
 
 1. Name: Amazon Web Services EMEA SARL
 
-    Address: Address, 38, Avenue John F. Kennedy LU-1855 Luxembourg
+   Address: Address, 38, Avenue John F. Kennedy LU-1855 Luxembourg
 
-    Contact person's name, position and contact details: Amazon Web Services EMEA SARL, Address, 38, Avenue John F. Kennedy LU-1855 Luxembourg
+   Contact person's name, position and contact details: Amazon Web Services EMEA SARL, Address, 38, Avenue John F. Kennedy LU-1855 Luxembourg
 
-    Description of the processing (including a clear delimitation of responsibilities in case several sub-processors are authorised):
+   Description of the processing (including a clear delimitation of responsibilities in case several sub-processors are authorised):
 
-    Provides server and database capacity for the functioning of the Platform. Processes requests by the User to access the Platform and provide the requested content.
+   Provides server and database capacity for the functioning of the Platform. Processes requests by the User to access the Platform and provide the requested content.
 
 2. Name: Uploadcare Inc.
 
-    Address: Burrard St, Vancouver, BC V7X 1M8, Canada
+   Address: Burrard St, Vancouver, BC V7X 1M8, Canada
 
-    Contact person's name, position and contact details: [privacy@uploadcare.com](mailto:privacy@uploadcare.com).
+   Contact person's name, position and contact details: [privacy@uploadcare.com](mailto:privacy@uploadcare.com).
 
-    Description of the processing (including a clear delimitation of responsibilities in case several sub-processors are authorised):
+   Description of the processing (including a clear delimitation of responsibilities in case several sub-processors are authorised):
 
-    Provides file hosting and distribution services. Processes files uploaded by the User to the Platform and processes download requests by visitors.
+   Provides file hosting and distribution services. Processes files uploaded by the User to the Platform and processes download requests by visitors.

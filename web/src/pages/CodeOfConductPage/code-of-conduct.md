@@ -92,19 +92,19 @@ have a no-barriers reporting standard, and we actively encourage reports to our 
 
 Internal coordinators are always available, external coordinators are available if you feel there is a conflict in reporting to someone embedded within the space (e.g., about the person themselves, issues with our Liberate Science organizing).
 
-| Who (alphabetical order)               | Pronouns          |
-|-------------------|-------------------|
-| Chris Hartgerink  | They/them           |
-| Maya Anderson-González  | She/her           |
-| Andrew Pua  | He/his/him |
+| Who (alphabetical order) | Pronouns   |
+| ------------------------ | ---------- |
+| Chris Hartgerink         | They/them  |
+| Maya Anderson-González   | She/her    |
+| Andrew Pua               | He/his/him |
 
-To achieve a space where everyone can be present and contribute, our protocol is set up to, if reasonably possible, grow past the issues that occur *if people are willing to*.
+To achieve a space where everyone can be present and contribute, our protocol is set up to, if reasonably possible, grow past the issues that occur _if people are willing to_.
 
 We operate under the motto that we permit you to take part in our spaces and events; we can remove that permission at any time.
 
 ### Making a report
 
-We have a no-barriers reporting standard. That means **you do not need to judge whether what  occurred is "bad enough" to be reported**. It also means **the incident does not need to happen to you personally**; if it affects you, you may report it.
+We have a no-barriers reporting standard. That means **you do not need to judge whether what occurred is "bad enough" to be reported**. It also means **the incident does not need to happen to you personally**; if it affects you, you may report it.
 
 All legal persons may be reported (e.g., individual persons, organizations).
 

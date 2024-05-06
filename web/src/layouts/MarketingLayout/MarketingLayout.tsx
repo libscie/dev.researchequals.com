@@ -6,12 +6,14 @@ type MarketingLayoutProps = {
 }
 
 const MarketingLayout = ({ children }: MarketingLayoutProps) => {
-  return <>
-    <NavigationBar />
-    {children}
-    <hr/>
-    <Footer />
-  </>
+  return (
+    <>
+      <NavigationBar />
+      {children}
+      <hr />
+      <Footer />
+    </>
+  )
 }
 
 export default MarketingLayout

@@ -3,7 +3,7 @@ const ResearchEqualsLogoSymbol = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 566.93 357.9"
-      className="fill-violet-950 max-w-32"
+      className="max-w-32 fill-violet-950"
     >
       <g className="frame-children">
         <g>

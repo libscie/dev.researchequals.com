@@ -30,7 +30,7 @@ We maintain relations with the service providers as outlined in our [Data Proces
 
 **Deletion.** We minimize the amount of information we store as a security measure. As a rule, we delete information that is not deemed critical in our provisioning of the platform. Support emails may be stored up to 60 days for internal educational purposes. We allow users to delete their accounts at any time.
 
-Physical information, where legally possible and not in violation of legal obligations, is shredded according to the [DIN P5 standard](https://en.wikipedia.org/wiki/Paper_shredder#Deutsches_Institut_f%C3%BCr_Normung_(DIN)).
+Physical information, where legally possible and not in violation of legal obligations, is shredded according to the [DIN P5 standard](<https://en.wikipedia.org/wiki/Paper_shredder#Deutsches_Institut_f%C3%BCr_Normung_(DIN)>).
 
 Fault tolerance. Backup and replication strategies are designed to ensure redundancy and fail-over protections during a significant processing failure. Customer data is backed up to multiple durable data stores and replicated across multiple availability zones. Rollbacks are tested regularly.
 
