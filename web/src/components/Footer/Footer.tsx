@@ -7,7 +7,7 @@ const Footer = () => {
   const date = new Date()
 
   return (
-    <footer className='grid md:flex p-2 font-serif pb-[7rem] max-w-7xl mx-auto'>
+    <footer className='grid md:flex font-serif pb-[7rem] w-5/6 lg:w-2/3 mx-auto'>
         <FooterColumn flexGrow={false}>
           <ResearchEqualsLogoSymbol />
           <p>ResearchEquals</p>

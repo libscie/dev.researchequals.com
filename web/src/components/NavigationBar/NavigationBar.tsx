@@ -7,7 +7,7 @@ const NavigationBar = () => {
        <div className="h-full flex items-center">
           <nav className="flex-grow flex">
             <div className="hidden sm:inline [&>a]:text-violet-950 [&>a]:no-underline hover:[&>a]:text-violet-700">
-              <Link to={routes.home()}  className="mx-2">
+              <Link to={routes.home()}  className="mr-2">
                 Home
               </Link>
             </div>
