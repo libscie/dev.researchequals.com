@@ -11,21 +11,24 @@ const HomePage = () => {
         <div className="grid w-full gap-8 lg:mx-auto lg:grid-cols-2">
           <div className="p-2 text-center lg:text-right">
             <h1 className="text-5xl leading-[4rem] lg:text-7xl lg:leading-[8rem]">
-              Solid research{' '}
+              Solid workflows
+              <br />
               <RoughNotation
                 type="highlight"
                 show={true}
                 color="#fef08a"
                 animate={false}
               >
-                requires
+                lead to
               </RoughNotation>
-              <br />a solid workflow
+              <br />
+              solid research
             </h1>
             <p>
-              Upgrade how you read, publish, and curate with ResearchEquals.
+              Make publishing and curating research part of your daily workflow.
             </p>
           </div>
+          {/* Illustrative image */}
           <div className="flex w-auto max-w-full items-center p-8">
             <img
               src="https://placeholder.pics/svg/600x300"
@@ -34,6 +37,12 @@ const HomePage = () => {
           </div>
         </div>
         <hr />
+        {/* Connect */}
+        {/* supporting institutions */}
+        {/* Testimonials */}
+        {/* Collections */}
+        {/* runs on */}
+        {/* and much more... feature grid*/}
       </main>
     </>
   )

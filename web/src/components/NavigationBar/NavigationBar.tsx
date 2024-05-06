@@ -24,7 +24,7 @@ const NavigationBar = () => {
               </Link>
             </div>
           </nav>
-          <Button>Sign up</Button>
+          <Button styling="">Sign up</Button>
         </div>
       </div>
     </header>

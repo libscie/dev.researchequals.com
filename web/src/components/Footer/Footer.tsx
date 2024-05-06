@@ -24,7 +24,7 @@ const Footer = () => {
             href="https://creativecommons.org/publicdomain/zero/1.0/legalcode"
             target="_blank"
             rel="noreferrer"
-            className='flex items-center'
+            className="flex items-center"
           >
             <svg
               width="14"
