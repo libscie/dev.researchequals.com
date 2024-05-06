@@ -6,6 +6,7 @@ import MarketingLayout from './layouts/MarketingLayout/MarketingLayout'
 const Routes = () => {
   return (
     <Router>
+      <Route path="/works" page={WorksPage} name="works" />
       <Set wrap={MarketingLayout} prerender>
         <Route path="/" page={HomePage} name="home" />
       </Set>
