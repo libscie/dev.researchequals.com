@@ -18,12 +18,13 @@ const Footer = () => {
           <ResearchEqualsLogoSymbol />
           <p>ResearchEquals</p>
         </Link>
-        <span className="flex gap-1 text-sm  lg:justify-start ">
+        <span className="flex gap-1 text-sm lg:justify-start ">
           {date.getFullYear()}
           <a
             href="https://creativecommons.org/publicdomain/zero/1.0/legalcode"
             target="_blank"
             rel="noreferrer"
+            className='flex items-center'
           >
             <svg
               width="14"
