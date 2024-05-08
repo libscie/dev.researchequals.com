@@ -1,9 +1,10 @@
 import { Link, routes } from '@redwoodjs/router'
+
 import Button from 'src/components/Button'
 
 const NavigationBar = () => {
   return (
-    <header className="fixed bottom-8 m-0 w-full select-none p-0 ">
+    <header className="fixed bottom-8 z-[9999] m-0 w-full select-none p-0">
       <div className="mx-auto h-16 w-5/6 rounded-[9999px] bg-violet-200 bg-opacity-80 pl-8 pr-4 align-middle font-serif text-xl text-violet-950 backdrop-blur-sm lg:w-2/3">
         <div className="flex h-full items-center">
           <nav className="flex flex-grow">
