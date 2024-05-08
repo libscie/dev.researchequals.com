@@ -1,6 +1,8 @@
 import { Metadata } from '@redwoodjs/web'
 
+import Badge from 'src/components/Badge/Badge'
 import Footer from 'src/components/Footer/Footer'
+import MetadataContainer from 'src/components/MetadataContainer/MetadataContainer'
 import NavigationBar from 'src/components/NavigationBar/NavigationBar'
 
 const WorksPage = () => {
@@ -9,41 +11,23 @@ const WorksPage = () => {
       <Metadata title="Works" description="Works page" />
       <NavigationBar />
 
-      <article className="h-full w-full lg:flex ">
-        <div className="flex text-right lg:block lg:w-2/5 lg:p-2 lg:px-4">
-          <span className="sticky top-2">
-            <h1 className="mt-0 text-4xl">
-              Title of the work is fairly long: But longer is always possible
-            </h1>
-            <p>
-              Chris Hartgerink, Nami Sunami, Whoever Else, Example Name, Max
-              Mustermann
-            </p>
-            <p className="">
-              <span className="m-1 inline-flex items-center rounded-md bg-violet-50 px-2 py-1 text-sm font-normal text-violet-950 ring-1 ring-inset ring-violet-950/10">
-                2020-02-01
-              </span>
-              <span className="m-1 inline-flex items-center rounded-md bg-violet-50 px-2 py-1 text-sm font-normal text-violet-950 ring-1 ring-inset ring-violet-950/10">
-                Preprint
-              </span>
-              <span className="m-1 inline-flex items-center rounded-md bg-violet-50 px-2 py-1 text-sm font-normal text-violet-950 ring-1 ring-inset ring-violet-950/20">
-                English
-              </span>
-              <span className="m-1 inline-flex items-center rounded-md bg-violet-50 px-2 py-1 text-sm font-normal text-violet-950 ring-1 ring-inset ring-violet-950/20">
-                CC BY
-              </span>
-              <span className="m-1 inline-flex items-center rounded-md bg-violet-50 px-2 py-1 text-sm font-normal text-violet-950 ring-1 ring-inset ring-violet-950/10">
-                10.53962/xxxx-xxxx
-              </span>
-            </p>
-            {/* <p>2020-02-01</p>
-            <p>10.53962/xxxx-xxxx</p>
-            <p>CC BY</p>
-            <p>Preprint</p>
-            <p>English</p> */}
-            <hr />
-          </span>
-        </div>
+      <article className="h-full w-full lg:flex">
+        <MetadataContainer>
+          <h1 className="mt-0 text-4xl">
+            Title of the work is fairly long: But longer is always possible
+          </h1>
+          <p>
+            Chris Hartgerink, Nami Sunami, Whoever Else, Example Name, Max
+            Mustermann
+          </p>
+          <p className="">
+            <Badge>2020-02-01</Badge>
+            <Badge>Preprint</Badge>
+            <Badge>English</Badge>
+            <Badge>CC BY</Badge>
+            <Badge>10.53962/xxxx-xxxx</Badge>
+          </p>
+        </MetadataContainer>
         <div className="w-full p-0">
           <div className="max-w-2xl lg:p-2 print:max-w-full ">
             <div className="m-2">
