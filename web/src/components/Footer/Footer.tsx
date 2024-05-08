@@ -4,8 +4,11 @@ import {
   LogoMastodon,
   LogoLinkedin,
 } from '@carbon/icons-react'
+
 import { Link, routes } from '@redwoodjs/router'
+
 import ResearchEqualsLogoSymbol from 'src/components/ResearchEqualsLogoSymbol/ResearchEqualsLogoSymbol'
+
 import FooterColumn from '../FooterColumn/FooterColumn'
 
 const Footer = () => {
