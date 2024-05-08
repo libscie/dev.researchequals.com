@@ -9,6 +9,7 @@ const Routes = () => {
     <Router>
       <Set wrap={ContentLayout}>
         <Route path="/author" page={AuthorPage} name="author" />
+        <Route path="/search" page={SearchPage} name="search" />
         <Route path="/works" page={WorksPage} name="works" />
       </Set>
       <Set wrap={MarketingLayout} prerender>
