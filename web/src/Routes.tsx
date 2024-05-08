@@ -1,12 +1,16 @@
 import { Router, Route, Set } from '@redwoodjs/router'
 
+import ContentLayout from './layouts/ContentLayout/ContentLayout'
 import MarkdownLayout from './layouts/MarkdownLayout/MarkdownLayout'
 import MarketingLayout from './layouts/MarketingLayout/MarketingLayout'
 
 const Routes = () => {
   return (
     <Router>
-      <Route path="/works" page={WorksPage} name="works" />
+      <Set wrap={ContentLayout}>
+        <Route path="/author" page={AuthorPage} name="author" />
+        <Route path="/works" page={WorksPage} name="works" />
+      </Set>
       <Set wrap={MarketingLayout} prerender>
         <Route path="/" page={HomePage} name="home" />
       </Set>

@@ -1,16 +1,12 @@
 import { Metadata } from '@redwoodjs/web'
 
 import Badge from 'src/components/Badge/Badge'
-import Footer from 'src/components/Footer/Footer'
 import MetadataContainer from 'src/components/MetadataContainer/MetadataContainer'
-import NavigationBar from 'src/components/NavigationBar/NavigationBar'
 
 const WorksPage = () => {
   return (
     <>
       <Metadata title="Works" description="Works page" />
-      <NavigationBar />
-
       <article className="h-full w-full lg:flex">
         <MetadataContainer>
           <h1 className="mt-0 text-4xl">
@@ -777,8 +773,6 @@ const WorksPage = () => {
           </div>
         </div>
       </article>
-      <hr />
-      <Footer />
     </>
   )
 }
