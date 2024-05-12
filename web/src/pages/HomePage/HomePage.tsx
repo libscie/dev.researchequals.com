@@ -28,13 +28,10 @@ const HomePage = () => {
         }]}/>
         <hr />
         <PrimarySocialProof />
-        <hr />
         <PrimaryCallToAction />
-        <hr />
         <SecondaryBenefits />
         <hr />
         <SecondarySocialProof />
-        <hr />
         <SecondaryCallToAction />
       </main>
     </>
