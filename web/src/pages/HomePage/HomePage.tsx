@@ -16,12 +16,9 @@ const HomePage = () => {
     <>
       <Metadata title="Home" description="Home page" />
       <main>
-        {/* Hero */}
         <Hero />
         <hr />
-        {/* Unique selling point */}
         <UniqueSellingPoint />
-        {/* Primary benefits */}
         <PrimaryBenefits
           benefits={[
             {
