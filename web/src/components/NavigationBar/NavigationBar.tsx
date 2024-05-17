@@ -1,8 +1,11 @@
 import { Link, routes } from '@redwoodjs/router'
 
+import { useAuth } from 'src/auth'
 import Button from 'src/components/Button'
 
 const NavigationBar = () => {
+  const { isAuthenticated, currentUser, logOut } = useAuth()
+
   return (
     <header className="fixed bottom-8 z-[9999] m-0 w-full select-none p-0">
       <div className="mx-auto h-16 w-5/6 rounded-[9999px] bg-violet-200 bg-opacity-80 pl-8 pr-4 align-middle font-serif text-xl text-violet-950 backdrop-blur-sm lg:w-2/3">
@@ -25,6 +28,13 @@ const NavigationBar = () => {
               </Link>
             </div>
           </nav>
+          {isAuthenticated ? (
+            <button onClick={logOut}>
+              <Button styling="">Log out</Button>
+            </button>
+          ) : (
+            <Link to={routes.login()}>Login</Link>
+          )}
           <Button styling="">Sign up</Button>
         </div>
       </div>

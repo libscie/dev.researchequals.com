@@ -45,3 +45,20 @@ hr {
   border: 1px solid #2e1065;
   width: 40%;
 }
+
+@layer utilities {
+  .auth-label {
+    @apply sr-only block font-medium sm:text-left rtl:text-right
+  }
+
+  .auth-label-error {
+    @apply mt-4
+  }
+
+  .auth-input {
+    @apply my-4 border-0 border-b-2 bg-transparent focus:border-violet-500 focus:ring-violet-500 sm:w-full
+  }
+  .auth-input-error {
+    @apply my-4 border-0 border-b-2 border-red-500 bg-transparent focus:border-violet-500  sm:w-full
+  }
+}

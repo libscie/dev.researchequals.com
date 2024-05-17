@@ -1,18 +1,20 @@
 import { Router, Route, Set } from '@redwoodjs/router'
 
+import { useAuth } from './auth'
+import AuthLayout from './layouts/AuthLayout/AuthLayout'
 import ContentLayout from './layouts/ContentLayout/ContentLayout'
 import MarkdownLayout from './layouts/MarkdownLayout/MarkdownLayout'
 import MarketingLayout from './layouts/MarketingLayout/MarketingLayout'
 
-import { useAuth } from './auth'
-
 const Routes = () => {
   return (
     <Router useAuth={useAuth}>
-      <Route path="/login" page={LoginPage} name="login" />
-      <Route path="/signup" page={SignupPage} name="signup" />
-      <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
-      <Route path="/reset-password" page={ResetPasswordPage} name="resetPassword" />
+      <Set wrap={AuthLayout}>
+        <Route path="/login" page={LoginPage} name="login" />
+        <Route path="/signup" page={SignupPage} name="signup" />
+        <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
+        <Route path="/reset-password" page={ResetPasswordPage} name="resetPassword" />
+      </Set>
       <Set wrap={ContentLayout}>
         <Route path="/author" page={AuthorPage} name="author" />
         <Route path="/search" page={SearchPage} name="search" />
