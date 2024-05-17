@@ -1,11 +1,11 @@
 interface Benefit {
-  benefit: string;
-  image: string;
+  benefit: string
+  image: string
 }
 
-type Benefits = Benefit[];
+type Benefits = Benefit[]
 
-const PrimaryBenefits = ({ benefits }) => {
+const PrimaryBenefits = ({ benefits }: { benefits: Benefits }) => {
   return (
     <div>
       {benefits.map((benefit) => (
@@ -19,6 +19,7 @@ const PrimaryBenefits = ({ benefits }) => {
             <img
               src={benefit.image}
               className="max-h-2xl mx-auto w-auto max-w-full lg:mx-0"
+              alt=""
             />
           </div>
         </div>
