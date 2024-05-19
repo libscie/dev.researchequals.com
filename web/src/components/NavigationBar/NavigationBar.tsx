@@ -29,13 +29,22 @@ const NavigationBar = () => {
             </div>
           </nav>
           {isAuthenticated ? (
-            <button onClick={logOut}>
-              <Button styling="">Log out</Button>
-            </button>
+            <>
+              <button onClick={logOut}>
+                <Button styling="">Log out</Button>
+              </button>
+              <img
+                src="https://www.chjh.nl/content/images/2022/04/220329_ChrisHartgerink_384_v1.jpg"
+                alt="avatar"
+                className="-mr-4 h-20 w-20 rounded-full object-cover"
+              />
+            </>
           ) : (
-            <Link to={routes.login()}>Login</Link>
+            <>
+              <Link to={routes.login()}>Login</Link>
+              <Button styling="">Sign up</Button>
+            </>
           )}
-          <Button styling="">Sign up</Button>
         </div>
       </div>
     </header>
