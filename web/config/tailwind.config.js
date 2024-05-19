@@ -3,7 +3,7 @@ module.exports = {
   corePlugins: {
     // This prevents being overly verbose using Tailwind
     // (For now)
-    preflight: false,
+    preflight: true,
   },
   content: ['src/**/*.{js,jsx,ts,tsx}'],
   theme: {

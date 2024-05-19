@@ -57,7 +57,7 @@ const Footer = () => {
         <Link to={routes.security()}>Security Policy</Link>
       </FooterColumn>
       <FooterColumn flexGrow={false}>
-        <div>
+        <div className="flex">
           <a
             href="https://discord.gg/SefsGJWWSw"
             className="mx-1"

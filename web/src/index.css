@@ -36,14 +36,15 @@ h5 {
   font-weight: normal;
 }
 
-footer a,
+/* footer a,
 footer a:visited {
   color: #2e1065;
-}
+} */
 
 hr {
   border: 1px solid #2e1065;
   width: 40%;
+  margin: 4rem auto 4rem auto
 }
 
 @layer utilities {
