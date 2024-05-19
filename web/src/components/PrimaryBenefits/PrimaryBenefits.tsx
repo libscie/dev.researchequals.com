@@ -1,6 +1,7 @@
 interface Benefit {
   benefit: string
   image: string
+  description: string
 }
 
 type Benefits = Benefit[]
@@ -10,10 +11,13 @@ const PrimaryBenefits = ({ benefits }: { benefits: Benefits }) => {
     <div>
       {benefits.map((benefit) => (
         <div key={benefit.benefit} className="grid gap-8 lg:grid-cols-2">
-          <div className="p-2 text-center lg:text-right">
-            <h2 className="text-4xl leading-[3.5rem] lg:text-5xl lg:leading-[5rem]">
-              {benefit.benefit}
-            </h2>
+          <div className="justify-items flex items-center p-2 lg:text-right ">
+            <div className="float right-0 w-full">
+              <h2 className="text-4xl leading-[3.5rem] lg:text-5xl lg:leading-[5rem]">
+                {benefit.benefit}
+              </h2>
+              <p>{benefit.description}</p>
+            </div>
           </div>
           <div className="flex w-auto max-w-full items-center p-8">
             <img

@@ -23,11 +23,14 @@ const HomePage = () => {
           benefits={[
             {
               benefit: 'Solid workflows',
-              image: 'https://placeholder.pics/svg/600x600',
+              image: 'https://placeholder.pics/svg/600x400',
+              description: 'This is a test description',
             },
             {
-              benefit: 'Solid research',
-              image: 'https://placeholder.pics/svg/600x600',
+              benefit: 'Solid (re)search',
+              image: 'https://placeholder.pics/svg/600x400',
+              description:
+                'Search through 250 million records to find what you need.',
             },
           ]}
         />
