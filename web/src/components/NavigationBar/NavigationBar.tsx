@@ -6,6 +6,7 @@ import Button from 'src/components/Button'
 const NavigationBar = () => {
   const { isAuthenticated, currentUser, logOut } = useAuth()
 
+  console.log(currentUser)
   return (
     <header className="fixed bottom-8 z-[9999] m-0 w-full select-none p-0">
       <div className="mx-auto h-16 w-5/6 rounded-[9999px] bg-violet-200 bg-opacity-80 pl-8 pr-4 align-middle font-serif text-xl text-violet-950 backdrop-blur-sm lg:w-2/3">
@@ -17,11 +18,11 @@ const NavigationBar = () => {
               </Link>
             </div>
             <div className="mx-auto flex-grow text-left sm:text-center [&>a]:text-violet-950 [&>a]:no-underline hover:[&>a]:text-violet-700">
-              <Link to={routes.home()} className="mx-2">
-                Read
+              <Link to={routes.search()} className="mx-2">
+                Find
               </Link>
               <Link to={routes.home()} className="mx-2">
-                Publish
+                Share
               </Link>
               <Link to={routes.home()} className="mx-2">
                 Curate
