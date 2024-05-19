@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@carbon/icons-react": "^11.40.0",
+    "@headlessui/react": "^2.0.3",
     "@redwoodjs/auth-dbauth-web": "7.5.1",
     "@redwoodjs/forms": "7.5.1",
     "@redwoodjs/router": "7.5.1",
