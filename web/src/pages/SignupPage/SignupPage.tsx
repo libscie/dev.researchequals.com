@@ -16,7 +16,9 @@ import { useAuth } from 'src/auth'
 import AuthContainer from 'src/components/AuthContainer/AuthContainer'
 
 // TODO
-// - [ ] Add a password confirmation field
+// - [ ] Add a show password field
+// - [ ] Add first name
+// - [ ] Add last name
 
 const SignupPage = () => {
   const { isAuthenticated, signUp } = useAuth()
@@ -55,58 +57,61 @@ const SignupPage = () => {
       subtitle={
         <>
           <span>Already have an account?</span>{' '}
-          <Link to={routes.login()} className="rw-link">
+          <Link to={routes.login()} className="">
             Log in!
           </Link>
         </>
       }
       form={
-        <Form onSubmit={onSubmit} className="rw-form-wrapper">
-          <Label
-            name="email"
-            className="auth-label"
-            errorClassName="auth-label-error"
-          >
-            Email
-          </Label>
-          <TextField
-            name="email"
-            className="auth-input"
-            errorClassName="auth-input auth-input-error"
-            ref={emailRef}
-            validation={{
-              required: {
-                value: true,
-                message: 'Email is required',
-              },
-            }}
-            placeholder="test@example.com"
-          />
-          <FieldError name="email" className="rw-field-error" />
-          <Label
-            name="password"
-            className="auth-label"
-            errorClassName="auth-label-error"
-          >
-            Password
-          </Label>
-          <PasswordField
-            name="password"
-            className="auth-input"
-            errorClassName="auth-input auth-input-error"
-            autoComplete="current-password"
-            validation={{
-              required: {
-                value: true,
-                message: 'Password is required',
-              },
-            }}
-            placeholder="Enter a password"
-          />
-          <FieldError name="password" className="rw-field-error" />
-
-          <div className="rw-button-group">
-            <Submit className="rw-button rw-button-blue">Sign Up</Submit>
+        <Form onSubmit={onSubmit} className="flex flex-col">
+          <span className="">
+            <Label
+              name="email"
+              className="auth-label"
+              errorClassName="auth-label-error"
+            >
+              Email
+            </Label>
+            <TextField
+              name="email"
+              className="auth-input"
+              errorClassName="auth-input auth-input-error"
+              ref={emailRef}
+              validation={{
+                required: {
+                  value: true,
+                  message: 'Email is required',
+                },
+              }}
+              placeholder="test@example.com"
+            />
+            <FieldError name="email" className="" />
+          </span>
+          <span className="">
+            <Label
+              name="password"
+              className="auth-label"
+              errorClassName="auth-label-error"
+            >
+              Password
+            </Label>
+            <PasswordField
+              name="password"
+              className="auth-input"
+              errorClassName="auth-input auth-input-error"
+              autoComplete="current-password"
+              validation={{
+                required: {
+                  value: true,
+                  message: 'Password is required',
+                },
+              }}
+              placeholder="Enter a password"
+            />
+            <FieldError name="password" className="" />
+          </span>
+          <div className="">
+            <Submit className="">Sign Up</Submit>
           </div>
         </Form>
       }

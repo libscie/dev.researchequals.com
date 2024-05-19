@@ -56,8 +56,8 @@ const LoginPage = () => {
         </>
       }
       form={
-        <Form onSubmit={onSubmit} className="">
-          <span className="my-4">
+        <Form onSubmit={onSubmit} className="flex flex-col">
+          <span className="">
             <Label
               name="email"
               className="auth-label"
@@ -80,7 +80,7 @@ const LoginPage = () => {
             />
             <FieldError name="email" className="" />
           </span>
-          <span className="my-4">
+          <span className="">
             <Label
               name="password"
               className="auth-label"
