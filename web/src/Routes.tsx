@@ -9,6 +9,7 @@ import MarketingLayout from './layouts/MarketingLayout/MarketingLayout'
 const Routes = () => {
   return (
     <Router useAuth={useAuth}>
+      <Route path="/settings" page={SettingsPage} name="settings" />
       <Set wrap={AuthLayout}>
         <Route path="/login" page={LoginPage} name="login" />
         <Route path="/signup" page={SignupPage} name="signup" />
