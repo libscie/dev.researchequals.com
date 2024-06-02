@@ -5,7 +5,7 @@ import {
   LogoLinkedin,
 } from '@carbon/icons-react'
 
-import { Link, routes } from '@redwoodjs/router'
+import { Link, NavLink, routes } from '@redwoodjs/router'
 
 import ResearchEqualsLogoSymbol from 'src/components/ResearchEqualsLogoSymbol/ResearchEqualsLogoSymbol'
 
@@ -17,11 +17,15 @@ const Footer = () => {
   return (
     <footer className="mx-auto grid w-5/6 pb-[7rem] font-serif md:flex lg:w-2/3">
       <FooterColumn flexGrow={false}>
-        <Link to={routes.home()}>
+        <Link
+          to={routes.home()}
+          role="link"
+          className="focus:outline-none focus:outline-2 focus:ring focus:ring-violet-950"
+        >
           <ResearchEqualsLogoSymbol />
           <p>ResearchEquals</p>
         </Link>
-        <span className="flex gap-1 text-sm lg:justify-start ">
+        <span className="flex gap-1 text-sm focus:outline-none focus:outline-2 focus:ring focus:ring-violet-950 lg:justify-start">
           {date.getFullYear()}
           <a
             href="https://creativecommons.org/publicdomain/zero/1.0/legalcode"
@@ -43,18 +47,35 @@ const Footer = () => {
         </span>
       </FooterColumn>
       <FooterColumn flexGrow={false}>
-        <Link to={routes.home()}>Home</Link>
-        <Link to={routes.terms()}>Terms</Link>
-        <Link to={routes.privacy()}>Privacy Policy</Link>
+        <NavLink to={routes.home()} activeClassName="underline">
+          Home
+        </NavLink>
+        <NavLink to={routes.terms()} activeClassName="underline">
+          Terms
+        </NavLink>
+        <NavLink to={routes.privacy()} activeClassName="underline">
+          Privacy Policy
+        </NavLink>
       </FooterColumn>
       <FooterColumn flexGrow={true}>
-        <Link to={routes.codeOfConduct()}>Code of Conduct</Link>
-        <Link to={routes.dataProcessingAgreement()}>
+        <NavLink to={routes.codeOfConduct()} activeClassName="underline">
+          Code of Conduct
+        </NavLink>
+        <NavLink
+          to={routes.dataProcessingAgreement()}
+          activeClassName="underline"
+        >
           Data Processing Agreement
-        </Link>
-        <Link to={routes.poisonPill()}>Poison Pill</Link>
-        <Link to={routes.rightOfWithdrawal()}>Right of Withdrawal</Link>
-        <Link to={routes.security()}>Security Policy</Link>
+        </NavLink>
+        <NavLink to={routes.poisonPill()} activeClassName="underline">
+          Poison Pill
+        </NavLink>
+        <NavLink to={routes.rightOfWithdrawal()} activeClassName="underline">
+          Right of Withdrawal
+        </NavLink>
+        <NavLink to={routes.security()} activeClassName="underline">
+          Security Policy
+        </NavLink>
       </FooterColumn>
       <FooterColumn flexGrow={false}>
         <div className="flex">
@@ -84,7 +105,7 @@ const Footer = () => {
           </a>
           <a
             href="https://akademienl.social/@ResearchEquals"
-            className="mx-1"
+            className="mx-1 focus:underline focus:outline-none"
             target="_blank"
             rel="noreferrer"
           >
@@ -92,7 +113,9 @@ const Footer = () => {
           </a>
         </div>
         <div>
-          <Link to={routes.imprint()}>Imprint</Link>
+          <NavLink to={routes.imprint()} activeClassName="underline">
+            Imprint
+          </NavLink>
         </div>
       </FooterColumn>
     </footer>
