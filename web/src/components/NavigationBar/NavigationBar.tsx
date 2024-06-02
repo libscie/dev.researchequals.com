@@ -1,12 +1,9 @@
-import { useState } from 'react'
-
 import { DataCategorical, Logout, Settings } from '@carbon/icons-react'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 
 import { Link, routes } from '@redwoodjs/router'
 
 import { useAuth } from 'src/auth'
-import Button from 'src/components/Button'
 
 const NavigationBar = () => {
   const { isAuthenticated, currentUser, logOut } = useAuth()
@@ -60,7 +57,7 @@ const NavigationBar = () => {
                   <MenuItem>
                     <Link
                       to={routes.home()}
-                      className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
+                      className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white sm:hidden"
                     >
                       <DataCategorical className="size-4 fill-violet-950 group-data-[focus]:fill-white" />
                       Curate
@@ -90,7 +87,7 @@ const NavigationBar = () => {
           ) : (
             <>
               <Link to={routes.login()}>Login</Link>
-              <Button styling="">Sign up</Button>
+              <Link to={routes.signup()}>Sign up</Link>
             </>
           )}
         </div>
