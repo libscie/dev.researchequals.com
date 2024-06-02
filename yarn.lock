@@ -3536,6 +3536,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@heroicons/react@npm:^2.1.3":
+  version: 2.1.3
+  resolution: "@heroicons/react@npm:2.1.3"
+  peerDependencies:
+    react: ">= 16"
+  checksum: 10c0/abe6d203dab454ad7ec1305011148b32b90d1a8110134f9f930bd799f582496a6fb781efc9704cad45edf2dc6dfeb2d1fa6e933755d7d681b49881fa521fa2bf
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.14":
   version: 0.11.14
   resolution: "@humanwhocodes/config-array@npm:0.11.14"
@@ -24267,6 +24276,7 @@ __metadata:
   dependencies:
     "@carbon/icons-react": "npm:^11.40.0"
     "@headlessui/react": "npm:^2.0.3"
+    "@heroicons/react": "npm:^2.1.3"
     "@redwoodjs/auth-dbauth-web": "npm:7.5.1"
     "@redwoodjs/forms": "npm:7.5.1"
     "@redwoodjs/router": "npm:7.5.1"
