@@ -54,33 +54,33 @@ const NavigationBar = () => {
                   />
                 </MenuButton>
                 <MenuItems
-                  anchor={{ to: 'bottom', gap: 8 }}
+                  anchor={{ to: 'top', gap: 8 }}
                   className="w-52 origin-top-right rounded-xl bg-violet-200 bg-opacity-80 p-1 text-sm/6 text-violet-950 backdrop-blur-sm focus:outline-none"
                 >
                   <MenuItem>
                     <Link
                       to={routes.home()}
-                      className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 hover:bg-violet-950 hover:text-white sm:hidden"
+                      className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
                     >
-                      <DataCategorical className="size-4 fill-violet-950 group-hover:fill-white" />
+                      <DataCategorical className="size-4 fill-violet-950 group-data-[focus]:fill-white" />
                       Curate
                     </Link>
                   </MenuItem>
                   <MenuItem>
                     <Link
                       to={routes.settings()}
-                      className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 hover:bg-violet-950 hover:text-white"
+                      className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
                     >
-                      <Settings className="size-4 fill-violet-950 group-hover:fill-white" />
+                      <Settings className="size-4 fill-violet-950 group-data-[focus]:fill-white" />
                       Settings
                     </Link>
                   </MenuItem>
                   <MenuItem>
                     <button
                       onClick={logOut}
-                      className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 hover:bg-violet-950 hover:text-white"
+                      className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
                     >
-                      <Logout className="size-4 fill-violet-950 group-hover:fill-white" />
+                      <Logout className="size-4 fill-violet-950 group-data-[focus]:fill-white" />
                       Log out
                     </button>
                   </MenuItem>
