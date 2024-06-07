@@ -1,4 +1,11 @@
-import { DataCategorical, Logout, Settings } from '@carbon/icons-react'
+import {
+  DataCategorical,
+  DecisionTree,
+  Logout,
+  ManageProtection,
+  Settings,
+  UserAvatarFilledAlt,
+} from '@carbon/icons-react'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 
 import { Link, routes } from '@redwoodjs/router'
@@ -59,8 +66,35 @@ const NavigationBar = () => {
                       to={routes.home()}
                       className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white sm:hidden"
                     >
-                      <DataCategorical className="size-4 fill-violet-950 group-data-[focus]:fill-white" />
+                      <DataCategorical className="size-5 fill-violet-950 group-data-[focus]:fill-white" />
                       Curate
+                    </Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link
+                      to={routes.moderation()}
+                      className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
+                    >
+                      <DecisionTree className="size-5 fill-violet-950 group-data-[focus]:fill-white" />
+                      Moderation
+                    </Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link
+                      to={routes.administration()}
+                      className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
+                    >
+                      <ManageProtection className="size-5 fill-violet-950 group-data-[focus]:fill-white" />
+                      Administration
+                    </Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link
+                      to={routes.author()}
+                      className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
+                    >
+                      <UserAvatarFilledAlt className="size-5 fill-violet-950 group-data-[focus]:fill-white" />
+                      Profile
                     </Link>
                   </MenuItem>
                   <MenuItem>
@@ -68,7 +102,7 @@ const NavigationBar = () => {
                       to={routes.settings()}
                       className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
                     >
-                      <Settings className="size-4 fill-violet-950 group-data-[focus]:fill-white" />
+                      <Settings className="size-5 fill-violet-950 group-data-[focus]:fill-white" />
                       Settings
                     </Link>
                   </MenuItem>
@@ -77,7 +111,7 @@ const NavigationBar = () => {
                       onClick={logOut}
                       className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
                     >
-                      <Logout className="size-4 fill-violet-950 group-data-[focus]:fill-white" />
+                      <Logout className="size-5 fill-violet-950 group-data-[focus]:fill-white" />
                       Log out
                     </button>
                   </MenuItem>

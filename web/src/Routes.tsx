@@ -16,12 +16,14 @@ const Routes = () => {
         <Route path="/reset-password" page={ResetPasswordPage} name="resetPassword" />
       </Set>
       <Set wrap={ContentLayout}>
+        <Route path="/administration" page={AdministrationPage} name="administration" />
         <Route path="/author" page={AuthorPage} name="author" />
+        <Route path="/moderation" page={ModerationPage} name="moderation" />
         <Route path="/search" page={SearchPage} name="search" />
-        <Route path="/works" page={WorksPage} name="works" />
         <Route path="/settings" page={SettingsPage} name="settings" />
         <Route path="/settings/security" page={SettingsSecurityPage} name="settingsSecurity" />
         <Route path="/settings/workspace" page={SettingsWorkspacePage} name="settingsWorkspace" />
+        <Route path="/works" page={WorksPage} name="works" />
       </Set>
       <Set wrap={MarketingLayout} prerender>
         <Route path="/" page={HomePage} name="home" />
