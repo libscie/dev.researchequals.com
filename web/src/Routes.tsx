@@ -20,6 +20,8 @@ const Routes = () => {
         <Route path="/search" page={SearchPage} name="search" />
         <Route path="/works" page={WorksPage} name="works" />
         <Route path="/settings" page={SettingsPage} name="settings" />
+        <Route path="/settings/security" page={SettingsSecurityPage} name="settingsSecurity" />
+        <Route path="/settings/workspace" page={SettingsWorkspacePage} name="settingsWorkspace" />
       </Set>
       <Set wrap={MarketingLayout} prerender>
         <Route path="/" page={HomePage} name="home" />

@@ -3,13 +3,13 @@ import { Metadata } from '@redwoodjs/web'
 import MetadataContainer from 'src/components/MetadataContainer/MetadataContainer'
 import SettingsNav from 'src/components/SettingsNav/SettingsNav'
 
-const SettingsPage = () => {
+const SettingsSecurityPage = () => {
   return (
     <>
-      <Metadata title="Settings" description="Settings page" />
+      <Metadata title="SettingsSecurity" description="SettingsSecurity page" />
       <main className="h-full w-full lg:flex">
         <MetadataContainer>
-          <SettingsNav current="General" />
+          <SettingsNav current="Security" />
         </MetadataContainer>
         <div className="w-full p-0">
           <div className="max-w-2xl text-left">
@@ -29,4 +29,4 @@ const SettingsPage = () => {
   )
 }
 
-export default SettingsPage
+export default SettingsSecurityPage
