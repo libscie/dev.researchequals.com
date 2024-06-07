@@ -62,4 +62,19 @@ hr {
   .auth-input-error {
     @apply my-4 border-0 border-b-2 border-red-500 bg-transparent focus:border-violet-500  sm:w-full
   }
+
+  .settings-label {
+    @apply block font-medium sm:text-left rtl:text-right
+  }
+
+  .settings-label-error {
+    @apply mt-4
+  }
+
+  .settings-input {
+    @apply my-4 border-0 border-b-2 bg-transparent focus:border-violet-500 focus:ring-violet-500 sm:w-full
+  }
+  .settings-input-error {
+    @apply my-4 border-0 border-b-2 border-red-500 bg-transparent focus:border-violet-500  sm:w-full
+  }
 }
