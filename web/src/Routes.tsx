@@ -9,7 +9,6 @@ import MarketingLayout from './layouts/MarketingLayout/MarketingLayout'
 const Routes = () => {
   return (
     <Router useAuth={useAuth}>
-      <Route path="/settings" page={SettingsPage} name="settings" />
       <Set wrap={AuthLayout}>
         <Route path="/login" page={LoginPage} name="login" />
         <Route path="/signup" page={SignupPage} name="signup" />
@@ -20,6 +19,7 @@ const Routes = () => {
         <Route path="/author" page={AuthorPage} name="author" />
         <Route path="/search" page={SearchPage} name="search" />
         <Route path="/works" page={WorksPage} name="works" />
+        <Route path="/settings" page={SettingsPage} name="settings" />
       </Set>
       <Set wrap={MarketingLayout} prerender>
         <Route path="/" page={HomePage} name="home" />
