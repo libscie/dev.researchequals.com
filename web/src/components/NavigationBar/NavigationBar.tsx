@@ -85,10 +85,9 @@ const NavigationBar = () => {
               </Menu>
             </>
           ) : (
-            <>
-              <Link to={routes.login()}>Login</Link>
-              <Link to={routes.signup()}>Sign up</Link>
-            </>
+            <div className="rounded-full bg-violet-950 p-2 px-4 text-white">
+              <Link to={routes.login()}>Log In</Link>
+            </div>
           )}
         </div>
       </div>
