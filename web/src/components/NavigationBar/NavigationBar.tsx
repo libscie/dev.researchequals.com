@@ -34,7 +34,7 @@ const NavigationBar = () => {
                 Find
               </Link>
               <Link
-                to={routes.home()}
+                to={routes.drafts()}
                 className="rounded-md p-2 px-4 hover:bg-violet-950"
               >
                 Share

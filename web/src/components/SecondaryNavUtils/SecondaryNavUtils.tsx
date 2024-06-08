@@ -1,6 +1,10 @@
 import {
+  Book,
+  DocumentMultiple_01,
   Events,
+  Finance,
   FingerprintRecognition,
+  User,
   UserAvatarFilledAlt,
 } from '@carbon/icons-react'
 
@@ -17,5 +21,28 @@ export const settingsNav = [
     name: 'Workspace',
     href: routes.settingsWorkspace(),
     icon: UserAvatarFilledAlt,
+  },
+]
+
+export const searchNav = [
+  {
+    name: 'Works',
+    href: routes.works(),
+    icon: DocumentMultiple_01,
+  },
+  {
+    name: 'Authors',
+    href: routes.author(),
+    icon: User,
+  },
+  {
+    name: 'Organizations',
+    href: routes.administration(),
+    icon: Finance,
+  },
+  {
+    name: 'Sources',
+    href: routes.moderation(),
+    icon: Book,
   },
 ]

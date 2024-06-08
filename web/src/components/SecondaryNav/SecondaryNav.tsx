@@ -8,6 +8,7 @@ interface SecondaryNavProps {
   header: string
   items: SecondaryNavItemProps[]
   current: string
+  fullWidth?: boolean
 }
 
 interface SecondaryNavItemProps {
@@ -16,13 +17,23 @@ interface SecondaryNavItemProps {
   icon: CarbonIconType
 }
 
-const SecondaryNav = ({ header, items, current }: SecondaryNavProps) => {
+const SecondaryNav = ({
+  header,
+  items,
+  current,
+  fullWidth = false,
+}: SecondaryNavProps) => {
   return (
     <>
       <h1 className="text-left lg:text-center">{header}</h1>
-      <aside className="mx-auto flex overflow-x-auto py-4 lg:block lg:w-64 lg:flex-none lg:border-0">
+      <aside
+        className={classNames(
+          fullWidth ? 'w-full' : 'lg:w-64',
+          'mx-auto flex max-w-[100vw] overflow-x-auto py-4  lg:block lg:flex-none lg:border-0'
+        )}
+      >
         <nav className="flex-none px-4 sm:px-6 lg:px-0">
-          <ul className="flex gap-x-3 gap-y-1 whitespace-nowrap lg:flex-col">
+          <ul className="flex gap-x-3 gap-y-1 text-left lg:flex-col">
             {items.map((item) => (
               <li key={item.name}>
                 <Link

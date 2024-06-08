@@ -14,6 +14,8 @@ import { Metadata } from '@redwoodjs/web'
 
 import Badge from 'src/components/Badge/Badge'
 import MetadataContainer from 'src/components/MetadataContainer/MetadataContainer'
+import SecondaryNav from 'src/components/SecondaryNav/SecondaryNav'
+import { searchNav } from 'src/components/SecondaryNavUtils/SecondaryNavUtils'
 import { uninvert } from 'src/utils'
 
 interface FormValues {
@@ -48,6 +50,9 @@ const SearchPage = () => {
       <Metadata title="Search" description="Search page" />
       <main className="h-full w-full lg:flex">
         <MetadataContainer>
+          <SecondaryNav items={searchNav} header="Find" current="Works" />
+        </MetadataContainer>
+        <div className="w-full p-0">
           <Form className="" onSubmit={onSubmit}>
             <label
               htmlFor="email"
@@ -75,15 +80,10 @@ const SearchPage = () => {
                 <Query className="h-5 w-5 text-violet-950" aria-hidden="true" />
               </div>
             </div>
-            <SelectField name={'test'}>
-              <option>tet</option>
-            </SelectField>
             <Submit className="flex h-8 w-auto cursor-pointer items-center rounded-[100px] border-0 bg-violet-600 px-2.5 py-1 text-center font-serif text-xl text-violet-50 hover:bg-violet-500">
               Save
             </Submit>
           </Form>
-        </MetadataContainer>
-        <div className="w-full p-0">
           <div className="p-0">
             <div className="columns-2 p-4 xl:columns-3">
               {JSON.stringify(openalex) === '{}' ? (
