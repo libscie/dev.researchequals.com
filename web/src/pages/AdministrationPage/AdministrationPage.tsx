@@ -2,10 +2,7 @@ import {
   AirlinePassengerCare,
   Bullhorn,
   CloudAuditing,
-  DocumentMultiple_01,
-  Finance,
   RuleFilled,
-  User,
 } from '@carbon/icons-react'
 
 import { routes } from '@redwoodjs/router'
@@ -30,7 +27,6 @@ const AdministrationPage = () => {
               {
                 name: 'Testimonials',
                 href: routes.administration(),
-                // eslint-disable-next-line react/jsx-no-undef
                 icon: AirlinePassengerCare,
               },
               {
