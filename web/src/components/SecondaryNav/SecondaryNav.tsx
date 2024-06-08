@@ -1,35 +1,29 @@
-import {
-  FingerPrintIcon,
-  UserCircleIcon,
-  UsersIcon,
-} from '@heroicons/react/24/outline'
+import { CarbonIconType } from '@carbon/icons-react'
 
-import { Link, routes } from '@redwoodjs/router'
+import { Link } from '@redwoodjs/router'
 
 import { classNames } from 'src/utils'
 
-const settingsNav = [
-  { name: 'General', href: routes.settings(), icon: UsersIcon },
-  {
-    name: 'Security',
-    href: routes.settingsSecurity(),
-    icon: FingerPrintIcon,
-  },
-  {
-    name: 'Workspace',
-    href: routes.settingsWorkspace(),
-    icon: UserCircleIcon,
-  },
-]
+interface SecondaryNavProps {
+  header: string
+  items: SecondaryNavItemProps[]
+  current: string
+}
 
-const SettingsNav = ({ current }) => {
+interface SecondaryNavItemProps {
+  name: string
+  href: string
+  icon: CarbonIconType
+}
+
+const SecondaryNav = ({ header, items, current }: SecondaryNavProps) => {
   return (
     <>
-      <h1 className="text-left lg:text-center">Settings</h1>
+      <h1 className="text-left lg:text-center">{header}</h1>
       <aside className="mx-auto flex overflow-x-auto py-4 lg:block lg:w-64 lg:flex-none lg:border-0">
         <nav className="flex-none px-4 sm:px-6 lg:px-0">
           <ul className="flex gap-x-3 gap-y-1 whitespace-nowrap lg:flex-col">
-            {settingsNav.map((item) => (
+            {items.map((item) => (
               <li key={item.name}>
                 <Link
                   to={item.href}
@@ -60,4 +54,4 @@ const SettingsNav = ({ current }) => {
   )
 }
 
-export default SettingsNav
+export default SecondaryNav

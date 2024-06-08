@@ -9,7 +9,8 @@ import {
 import { Metadata } from '@redwoodjs/web'
 
 import MetadataContainer from 'src/components/MetadataContainer/MetadataContainer'
-import SettingsNav from 'src/components/SettingsNav/SettingsNav'
+import SecondaryNav from 'src/components/SecondaryNav/SecondaryNav'
+import { settingsNav } from 'src/components/SecondaryNavUtils/SecondaryNavUtils'
 
 const SettingsSecurityPage = () => {
   const onSubmit = async () => {
@@ -20,7 +21,11 @@ const SettingsSecurityPage = () => {
       <Metadata title="SettingsSecurity" description="SettingsSecurity page" />
       <main className="h-full w-full lg:flex">
         <MetadataContainer>
-          <SettingsNav current="Security" />
+          <SecondaryNav
+            items={settingsNav}
+            header="Settings"
+            current="Security"
+          />
         </MetadataContainer>
         <div className="w-full">
           <div className="max-w-2xl text-left lg:my-8">
@@ -47,6 +52,7 @@ const SettingsSecurityPage = () => {
                 />
                 <FieldError name="email" className="" />
               </span>
+              <hr />
               <span className="">
                 <Label
                   name="password"
@@ -116,6 +122,8 @@ const SettingsSecurityPage = () => {
                 />
                 <FieldError name="password" className="" />
               </span>
+              <hr />
+
               <div className="">
                 <Submit className="">Save changes</Submit>
               </div>

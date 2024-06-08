@@ -1,14 +1,14 @@
 import { render } from '@redwoodjs/testing/web'
 
-import SettingsNav from './SettingsNav'
+import SecondaryNavUtils from './SecondaryNavUtils'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components
 
-describe('SettingsNav', () => {
+describe('SecondaryNavUtils', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<SettingsNav />)
+      render(<SecondaryNavUtils />)
     }).not.toThrow()
   })
 })

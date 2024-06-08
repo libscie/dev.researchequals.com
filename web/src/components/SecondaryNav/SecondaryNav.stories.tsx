@@ -12,7 +12,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import SettingsNav from './SettingsNav'
+import SettingsNav from './SecondaryNav'
 
 const meta: Meta<typeof SettingsNav> = {
   component: SettingsNav,

@@ -4,7 +4,7 @@ const features = [
   {
     name: 'Group authoring',
     description:
-      'No longer are you restricted to authoring as an individual. Author as your organization, team, or group.',
+      'You can author as individuals and as groups. This means you can choose the best format for authorship - as a group of individuals, as a team, or as an organization.',
     icon: LogoDiscord,
   },
   {
@@ -25,27 +25,26 @@ const features = [
     icon: LogoDiscord,
   },
   {
-    name: 'Team Reporting',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+    name: 'Email digests',
+    description: 'Get a digest of the activity every day, week, or month.',
     icon: LogoDiscord,
   },
   {
-    name: 'Saved Replies',
+    name: 'Federated',
     description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+      'You can follow authors or collections throughout the fediverse.',
     icon: LogoDiscord,
   },
   {
-    name: 'Email Commenting',
+    name: 'Open Source',
     description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+      'All code is open source and you can inspect how things work under the hood.',
     icon: LogoDiscord,
   },
   {
-    name: 'Connect with Customers',
+    name: 'Self-hosted',
     description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+      'We provide a hosted service, but you can also run your own instance.',
     icon: LogoDiscord,
   },
 ]
@@ -55,11 +54,11 @@ const SecondaryBenefits = () => {
     <div className="">
       <div className="mx-auto max-w-4xl px-6 py-24 sm:py-32 lg:max-w-7xl lg:px-8 lg:py-40">
         <h2 className="text-4xl font-bold tracking-tight ">
-          Inbox support built for efficiency.
+          Secondary benefits
         </h2>
         <p className="mt-6 max-w-3xl text-lg leading-8 ">
-          Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et
-          magna sit morbi lobortis. Blandit aliquam sit nisl euismod mattis in.
+          There is plenty more to discover. Here are some of the benefits we see
+          and hear about.
         </p>
         <div className="mt-20 grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
           {features.map((feature) => (
