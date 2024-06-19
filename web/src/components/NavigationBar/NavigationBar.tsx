@@ -90,25 +90,29 @@ const NavigationBar = () => {
                       libscie
                     </Link>
                   </MenuItem>
-                  <hr className="mx-auto my-2 p-0" />
-                  <MenuItem>
-                    <Link
-                      to={routes.moderation()}
-                      className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
-                    >
-                      <DecisionTree className="size-5 fill-violet-950 group-data-[focus]:fill-white" />
-                      Moderate
-                    </Link>
-                  </MenuItem>
-                  <MenuItem>
-                    <Link
-                      to={routes.administration()}
-                      className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
-                    >
-                      <ManageProtection className="size-5 fill-violet-950 group-data-[focus]:fill-white" />
-                      Administer
-                    </Link>
-                  </MenuItem>
+                  {currentUser.type != 'REGULAR' && (
+                    <>
+                      <hr className="mx-auto my-2 p-0" />
+                      <MenuItem>
+                        <Link
+                          to={routes.moderation()}
+                          className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
+                        >
+                          <DecisionTree className="size-5 fill-violet-950 group-data-[focus]:fill-white" />
+                          Moderate
+                        </Link>
+                      </MenuItem>
+                      <MenuItem>
+                        <Link
+                          to={routes.administration()}
+                          className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
+                        >
+                          <ManageProtection className="size-5 fill-violet-950 group-data-[focus]:fill-white" />
+                          Administer
+                        </Link>
+                      </MenuItem>
+                    </>
+                  )}
                   <hr className="mx-auto my-2 p-0" />
                   <MenuItem>
                     <Link
