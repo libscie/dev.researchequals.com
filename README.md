@@ -66,9 +66,9 @@ yarn rw prisma migrate dev
 # Open the database studio env
 yarn rw prisma studio
 
-
 # TODO - sort these commands
 yarn rw g scaffold <model>
+yarn rw prisma format
 ```
 
 <details>

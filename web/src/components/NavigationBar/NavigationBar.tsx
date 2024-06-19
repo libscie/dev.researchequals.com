@@ -51,7 +51,7 @@ const NavigationBar = () => {
               <Menu>
                 <MenuButton className="-mr-4 h-20 w-20 rounded-full focus:outline-none focus:outline-2 focus:ring focus:ring-violet-950 focus:ring-offset-2 active:bg-violet-700  data-[open]:bg-violet-700">
                   <img
-                    src="https://www.chjh.nl/content/images/2022/04/220329_ChrisHartgerink_384_v1.jpg"
+                    src="https://upload.wikimedia.org/wikipedia/commons/2/24/Missing_avatar.svg"
                     alt="avatar"
                     className="-mr-4 h-20 w-20 rounded-full object-cover"
                   />
