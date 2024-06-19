@@ -30,7 +30,7 @@ const ModerationPage = () => {
                 icon: Finance,
               },
             ]}
-            header="Moderation"
+            header="Moderate"
             current="General"
           />
         </MetadataContainer>

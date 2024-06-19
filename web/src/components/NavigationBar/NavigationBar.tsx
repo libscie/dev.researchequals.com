@@ -39,7 +39,7 @@ const NavigationBar = () => {
                 Share
               </Link>
               <Link
-                to={routes.home()}
+                to={routes.curate()}
                 className="hidden rounded-md p-2 px-4 hover:bg-violet-950 sm:inline"
               >
                 Curate
@@ -97,7 +97,7 @@ const NavigationBar = () => {
                       className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
                     >
                       <DecisionTree className="size-5 fill-violet-950 group-data-[focus]:fill-white" />
-                      Moderation
+                      Moderate
                     </Link>
                   </MenuItem>
                   <MenuItem>
@@ -106,13 +106,13 @@ const NavigationBar = () => {
                       className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
                     >
                       <ManageProtection className="size-5 fill-violet-950 group-data-[focus]:fill-white" />
-                      Administration
+                      Administer
                     </Link>
                   </MenuItem>
                   <hr className="mx-auto my-2 p-0" />
                   <MenuItem>
                     <Link
-                      to={routes.home()}
+                      to={routes.curate()}
                       className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white sm:hidden"
                     >
                       <DataCategorical className="size-5 fill-violet-950 group-data-[focus]:fill-white" />

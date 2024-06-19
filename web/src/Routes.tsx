@@ -17,6 +17,7 @@ const Routes = () => {
       </Set>
       <Set wrap={ContentLayout}>
         <Route path="/administration" page={AdministrationPage} name="administration" />
+        <Route path="/curate" page={CuratePage} name="curate" />
         <Route path="/@chartgerink" page={AuthorPage} name="author" />
         <Route path="/drafts" page={DraftsPage} name="drafts" />
         <Route path="/moderation" page={ModerationPage} name="moderation" />

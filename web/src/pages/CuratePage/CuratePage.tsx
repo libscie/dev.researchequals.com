@@ -1,9 +1,4 @@
-import {
-  AirlinePassengerCare,
-  Bullhorn,
-  CloudAuditing,
-  RuleFilled,
-} from '@carbon/icons-react'
+import { Book, DocumentMultiple_01, Finance, User } from '@carbon/icons-react'
 
 import { routes } from '@redwoodjs/router'
 import { Metadata } from '@redwoodjs/web'
@@ -11,36 +6,36 @@ import { Metadata } from '@redwoodjs/web'
 import MetadataContainer from 'src/components/MetadataContainer/MetadataContainer'
 import SecondaryNav from 'src/components/SecondaryNav/SecondaryNav'
 
-const AdministrationPage = () => {
+const CuratePage = () => {
   return (
     <>
-      <Metadata title="Administration" description="Administration page" />
+      <Metadata title="Curate" description="Curate page" />
       <main className="h-full w-full lg:flex">
         <MetadataContainer>
           <SecondaryNav
             items={[
               {
-                name: 'Announcement',
-                href: routes.administration(),
-                icon: Bullhorn,
+                name: 'Readings on improving equality in research',
+                href: routes.curate(),
+                icon: DocumentMultiple_01,
               },
               {
-                name: 'Testimonials',
-                href: routes.administration(),
-                icon: AirlinePassengerCare,
+                name: "Anna van 't Veer's collection",
+                href: routes.author(),
+                icon: User,
               },
               {
-                name: 'Log',
+                name: 'Curated articles from nonprofit publisher Annual Reviews.',
                 href: routes.administration(),
-                icon: CloudAuditing,
+                icon: Finance,
               },
               {
-                name: 'Server rules',
-                href: routes.administration(),
-                icon: RuleFilled,
+                name: 'Sources',
+                href: routes.moderation(),
+                icon: Book,
               },
             ]}
-            header="Administer"
+            header="Curate"
             current="General"
           />
         </MetadataContainer>
@@ -52,4 +47,4 @@ const AdministrationPage = () => {
   )
 }
 
-export default AdministrationPage
+export default CuratePage
