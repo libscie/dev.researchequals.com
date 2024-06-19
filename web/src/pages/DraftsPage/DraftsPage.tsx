@@ -37,7 +37,6 @@ const DraftsPage = () => {
             ]}
             header="Drafts"
             current="General"
-            fullWidth={true}
           />
         </MetadataContainer>
         <div className="w-full p-0">
