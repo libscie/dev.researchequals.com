@@ -47,8 +47,9 @@ const SignupPage = () => {
 
   const onSubmit = async (data: Record<string, string>) => {
     const response = await signUp({
-      email: data.email,
-      username: data.username,
+      // username here because of RedwoodJS
+      username: data.email,
+      handle: data.handle,
       password: data.password,
       givenName: data.givenName,
       familyName: data.familyName,
@@ -127,7 +128,7 @@ const SignupPage = () => {
               className="auth-label"
               errorClassName="auth-label-error"
             >
-              Username <FieldError name="handle" className="" />
+              Handle <FieldError name="handle" className="" />
             </Label>
             <TextField
               name="handle"
@@ -138,8 +139,12 @@ const SignupPage = () => {
                   value: true,
                   message: 'is required',
                 },
+                pattern: {
+                  value: /^[a-zA-Z0-9_]+$/,
+                  message: 'can only contain letters, numbers, and underscores',
+                },
               }}
-              placeholder="researchequals.com/@username"
+              placeholder="researchequals.com/@handle"
             />
           </span>
           <span className="">
@@ -187,28 +192,26 @@ const SignupPage = () => {
               placeholder="Enter a password"
             />
           </span>
-          <span className="text-left">
+          <span className="mx-4 sm:text-left">
             <CheckboxField
               name="show-password"
               onClick={togglePasswordField}
-              className="my-2 mr-2 h-4 w-4 rounded border-gray-300 bg-gray-200 text-violet-950 focus:ring-violet-500 dark:bg-gray-700"
+              className="my-2 mr-2 h-4 w-4 rounded border-gray-300 bg-gray-200 text-violet-950 focus:ring-violet-500"
             />
             <Label name="show-password" className="text-sm">
               Show password
             </Label>
           </span>
-          <div className="my-4 flex">
+          <div className="m-4 flex">
             <Switch
               checked={termsAccepted}
               onChange={setTermsAccepted}
               className={classNames(
-                termsAccepted
-                  ? 'bg-violet-950'
-                  : 'bg-gray-200 dark:bg-gray-700',
+                termsAccepted ? 'bg-violet-950' : 'bg-gray-200',
                 'relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0'
               )}
             >
-              <span className="sr-only">Use setting</span>
+              <span className="sr-only">Accept terms</span>
               <span
                 className={classNames(
                   termsAccepted ? 'translate-x-5' : 'translate-x-0',
@@ -245,12 +248,12 @@ const SignupPage = () => {
                 </span>
               </span>
             </Switch>
-            <p className="mx-2 text-left text-base font-normal text-gray-500 dark:text-gray-100">
+            <p className="mx-2 text-left text-base font-normal text-gray-500">
               I agree to the{' '}
               <a
                 href={routes.terms()}
                 target="_blank"
-                className="text-gray-700  underline focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0 dark:text-gray-100"
+                className="text-gray-700  underline focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0"
                 rel="noreferrer"
               >
                 Terms of use
@@ -259,23 +262,23 @@ const SignupPage = () => {
               <a
                 href={routes.privacy()}
                 target="_blank"
-                className="text-gray-700  underline focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0 dark:text-gray-100"
+                className="text-gray-700  underline focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0"
                 rel="noreferrer"
               >
                 Privacy policy
               </a>
             </p>
           </div>
-          <div className="my-4 flex">
+          <div className="m-4 flex">
             <Switch
               checked={cocAccepted}
               onChange={setCocAccepted}
               className={classNames(
-                cocAccepted ? 'bg-violet-950' : 'bg-gray-200 dark:bg-gray-700',
+                cocAccepted ? 'bg-violet-950' : 'bg-gray-200',
                 'relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0'
               )}
             >
-              <span className="sr-only">Use setting</span>
+              <span className="sr-only">Agree to code of conduct</span>
               <span
                 className={classNames(
                   cocAccepted ? 'translate-x-5' : 'translate-x-0',
@@ -312,12 +315,12 @@ const SignupPage = () => {
                 </span>
               </span>
             </Switch>
-            <p className="mx-2 text-base font-normal text-gray-500 dark:text-gray-100">
+            <p className="mx-2 text-base font-normal text-gray-500">
               I agree to the{' '}
               <a
                 href={routes.codeOfConduct()}
                 target="_blank"
-                className="text-gray-700 underline focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0 dark:text-gray-100"
+                className="text-gray-700 underline focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0"
                 rel="noreferrer"
               >
                 Code of Conduct

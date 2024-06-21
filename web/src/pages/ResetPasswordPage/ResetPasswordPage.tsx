@@ -1,17 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 
-import {
-  Form,
-  Label,
-  PasswordField,
-  Submit,
-  FieldError,
-} from '@redwoodjs/forms'
+import { Form, Label, PasswordField, FieldError } from '@redwoodjs/forms'
 import { navigate, routes } from '@redwoodjs/router'
 import { toast } from '@redwoodjs/web/toast'
 
 import { useAuth } from 'src/auth'
 import AuthContainer from 'src/components/AuthContainer/AuthContainer'
+import SubmitButton from 'src/components/SubmitButton/SubmitButton'
 
 const ResetPasswordPage = ({ resetToken }: { resetToken: string }) => {
   const { isAuthenticated, reauthenticate, validateResetToken, resetPassword } =
@@ -90,11 +85,7 @@ const ResetPasswordPage = ({ resetToken }: { resetToken: string }) => {
             <FieldError name="password" className="rw-field-error" />
           </div>
 
-          <div className="rw-button-group">
-            <Submit className="rw-button rw-button-blue" disabled={!enabled}>
-              Submit
-            </Submit>
-          </div>
+          <SubmitButton text="Submit" disabled={!enabled} />
         </Form>
       }
     />
