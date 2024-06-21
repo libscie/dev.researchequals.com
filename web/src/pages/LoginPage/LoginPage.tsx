@@ -6,7 +6,6 @@ import {
   Label,
   TextField,
   PasswordField,
-  Submit,
   FieldError,
 } from '@redwoodjs/forms'
 import { Link, navigate, routes } from '@redwoodjs/router'
@@ -14,6 +13,7 @@ import { toast } from '@redwoodjs/web/toast'
 
 import { useAuth } from 'src/auth'
 import AuthContainer from 'src/components/AuthContainer/AuthContainer'
+import SubmitButton from 'src/components/SubmitButton/SubmitButton'
 
 const LoginPage = () => {
   const { isAuthenticated, logIn } = useAuth()
@@ -50,7 +50,7 @@ const LoginPage = () => {
       subtitle={
         <>
           <span>Don&apos;t have an account?</span>{' '}
-          <Link to={routes.signup()} className="">
+          <Link to={routes.signup()} className="underline">
             Sign up!
           </Link>
         </>
@@ -63,7 +63,7 @@ const LoginPage = () => {
               className="auth-label"
               errorClassName="auth-label-error"
             >
-              Email
+              Email <FieldError name="email" className="" />
             </Label>
             <TextField
               name="email"
@@ -73,12 +73,11 @@ const LoginPage = () => {
               validation={{
                 required: {
                   value: true,
-                  message: 'Email is required',
+                  message: 'is required',
                 },
               }}
               placeholder="test@example.com"
             />
-            <FieldError name="email" className="" />
           </span>
           <span className="">
             <Label
@@ -86,7 +85,7 @@ const LoginPage = () => {
               className="auth-label"
               errorClassName="auth-label-error"
             >
-              Password
+              Password <FieldError name="password" className="" />
             </Label>
             <PasswordField
               name="password"
@@ -96,19 +95,19 @@ const LoginPage = () => {
               validation={{
                 required: {
                   value: true,
-                  message: 'Password is required',
+                  message: 'is required',
                 },
               }}
               placeholder="Enter your password"
             />
-            <Link to={routes.forgotPassword()} className="my-2 block text-sm">
+            <Link
+              to={routes.forgotPassword()}
+              className="my-2 block text-sm underline"
+            >
               Forgot Password?
             </Link>
-            <FieldError name="password" className="" />
           </span>
-          <Submit className="mx-auto flex h-8 w-auto cursor-pointer items-center rounded-[100px] border-0 bg-violet-600 px-2.5 py-1 text-center font-serif text-xl text-violet-50 hover:bg-violet-500">
-            Log in
-          </Submit>
+          <SubmitButton text="Log in" />
         </Form>
       }
     />

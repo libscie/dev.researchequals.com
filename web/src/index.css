@@ -53,14 +53,14 @@ hr {
   }
 
   .auth-label-error {
-    @apply mt-4
+    @apply mt-4 font-bold text-red-600
   }
 
   .auth-input {
     @apply my-4 border-0 border-b-2 bg-transparent focus:border-violet-500 focus:ring-violet-500 sm:w-full
   }
   .auth-input-error {
-    @apply my-4 border-0 border-b-2 border-red-500 bg-transparent focus:border-violet-500  sm:w-full
+    @apply my-4 border-0 border-b-2 border-red-500 bg-transparent focus:border-red-500 focus:ring-red-500  sm:w-full
   }
 
   .settings-label {
@@ -75,6 +75,6 @@ hr {
     @apply my-4 border-0 border-b-2 bg-transparent focus:border-violet-500 focus:ring-violet-500 sm:w-full
   }
   .settings-input-error {
-    @apply my-4 border-0 border-b-2 border-red-500 bg-transparent focus:border-violet-500  sm:w-full
+    @apply my-4 border-0 border-b-2 border-red-500 bg-transparent focus:border-red-500  sm:w-full focus:ring-red-500
   }
 }

@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react'
 
-import { Form, Label, TextField, Submit, FieldError } from '@redwoodjs/forms'
+import { Form, Label, TextField, FieldError } from '@redwoodjs/forms'
 import { navigate, routes } from '@redwoodjs/router'
 import { toast } from '@redwoodjs/web/toast'
 
 import { useAuth } from 'src/auth'
 import AuthContainer from 'src/components/AuthContainer/AuthContainer'
+import SubmitButton from 'src/components/SubmitButton/SubmitButton'
 
 const ForgotPasswordPage = () => {
   const { isAuthenticated, forgotPassword } = useAuth()
@@ -42,35 +43,30 @@ const ForgotPasswordPage = () => {
       title="Forgot Password"
       subtitle={null}
       form={
-        <Form onSubmit={onSubmit} className="rw-form-wrapper">
-          <div className="text-left">
+        <Form onSubmit={onSubmit} className="flex flex-col">
+          <span className="">
             <Label
               name="email"
               className="auth-label"
-              errorClassName="auth-label auth-label-error"
+              errorClassName="auth-label-error"
             >
-              Email
+              Email <FieldError name="email" className="" />
             </Label>
             <TextField
               name="email"
               className="auth-input"
-              errorClassName="auth-input auth-input-error"
+              errorClassName="auth-input-error"
               ref={emailRef}
               validation={{
                 required: {
                   value: true,
-                  message: 'Email is required',
+                  message: 'is required',
                 },
               }}
               placeholder="test@example.com"
             />
-
-            <FieldError name="email" className="rw-field-error" />
-          </div>
-
-          <div className="rw-button-group">
-            <Submit className="rw-button rw-button-blue">Submit</Submit>
-          </div>
+          </span>
+          <SubmitButton text="Submit" />
         </Form>
       }
     />
