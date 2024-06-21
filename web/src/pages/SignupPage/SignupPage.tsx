@@ -1,9 +1,6 @@
 import { useRef, useState } from 'react'
 import { useEffect } from 'react'
 
-import { Checkmark, Close } from '@carbon/icons-react'
-import { Switch } from '@headlessui/react'
-
 import {
   Form,
   Label,
@@ -17,8 +14,8 @@ import { toast } from '@redwoodjs/web/toast'
 
 import { useAuth } from 'src/auth'
 import AuthContainer from 'src/components/AuthContainer/AuthContainer'
+import SignupSwitch from 'src/components/SignupSwitch/SignupSwitch'
 import SubmitButton from 'src/components/SubmitButton/SubmitButton'
-import { classNames } from 'src/utils'
 
 const SignupPage = () => {
   const { isAuthenticated, signUp } = useAuth()
@@ -202,131 +199,47 @@ const SignupPage = () => {
               Show password
             </Label>
           </span>
-          <div className="m-4 flex">
-            <Switch
-              checked={termsAccepted}
-              onChange={setTermsAccepted}
-              className={classNames(
-                termsAccepted ? 'bg-violet-950' : 'bg-gray-200',
-                'relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0'
-              )}
+
+          <SignupSwitch
+            state={termsAccepted}
+            stateUpdateFn={setTermsAccepted}
+            label="Agree to terms of use and privacy policy"
+          >
+            I agree to the{' '}
+            <a
+              href={routes.terms()}
+              target="_blank"
+              className="text-gray-700  underline focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0"
+              rel="noreferrer"
             >
-              <span className="sr-only">Accept terms</span>
-              <span
-                className={classNames(
-                  termsAccepted ? 'translate-x-5' : 'translate-x-0',
-                  'pointer-events-none relative inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out'
-                )}
-              >
-                <span
-                  className={classNames(
-                    termsAccepted
-                      ? 'opacity-0 duration-100 ease-out'
-                      : 'opacity-100 duration-200 ease-in',
-                    'absolute inset-0 flex h-full w-full items-center justify-center transition-opacity'
-                  )}
-                  aria-hidden="true"
-                >
-                  <Close
-                    size={32}
-                    className="h-3 w-3 stroke-current stroke-2 text-gray-400"
-                  />
-                </span>
-                <span
-                  className={classNames(
-                    termsAccepted
-                      ? 'opacity-100 duration-200 ease-in'
-                      : 'opacity-0 duration-100 ease-out',
-                    'absolute inset-0 flex h-full w-full items-center justify-center transition-opacity'
-                  )}
-                  aria-hidden="true"
-                >
-                  <Checkmark
-                    size={32}
-                    className="h-3 w-3 stroke-current stroke-2 text-violet-950"
-                  />
-                </span>
-              </span>
-            </Switch>
-            <p className="mx-2 text-left text-base font-normal text-gray-500">
-              I agree to the{' '}
-              <a
-                href={routes.terms()}
-                target="_blank"
-                className="text-gray-700  underline focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0"
-                rel="noreferrer"
-              >
-                Terms of use
-              </a>{' '}
-              and to the processing of my personal data according to the{' '}
-              <a
-                href={routes.privacy()}
-                target="_blank"
-                className="text-gray-700  underline focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0"
-                rel="noreferrer"
-              >
-                Privacy policy
-              </a>
-            </p>
-          </div>
-          <div className="m-4 flex">
-            <Switch
-              checked={cocAccepted}
-              onChange={setCocAccepted}
-              className={classNames(
-                cocAccepted ? 'bg-violet-950' : 'bg-gray-200',
-                'relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0'
-              )}
+              Terms of use
+            </a>{' '}
+            and to the processing of my personal data according to the{' '}
+            <a
+              href={routes.privacy()}
+              target="_blank"
+              className="text-gray-700  underline focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0"
+              rel="noreferrer"
             >
-              <span className="sr-only">Agree to code of conduct</span>
-              <span
-                className={classNames(
-                  cocAccepted ? 'translate-x-5' : 'translate-x-0',
-                  'pointer-events-none relative inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out'
-                )}
-              >
-                <span
-                  className={classNames(
-                    cocAccepted
-                      ? 'opacity-0 duration-100 ease-out'
-                      : 'opacity-100 duration-200 ease-in',
-                    'absolute inset-0 flex h-full w-full items-center justify-center transition-opacity'
-                  )}
-                  aria-hidden="true"
-                >
-                  <Close
-                    size={32}
-                    className="h-3 w-3 stroke-current stroke-2 text-gray-400"
-                  />
-                </span>
-                <span
-                  className={classNames(
-                    cocAccepted
-                      ? 'opacity-100 duration-200 ease-in'
-                      : 'opacity-0 duration-100 ease-out',
-                    'absolute inset-0 flex h-full w-full items-center justify-center transition-opacity'
-                  )}
-                  aria-hidden="true"
-                >
-                  <Checkmark
-                    size={32}
-                    className="h-3 w-3 stroke-current stroke-2 text-violet-950"
-                  />
-                </span>
-              </span>
-            </Switch>
-            <p className="mx-2 text-base font-normal text-gray-500">
-              I agree to the{' '}
-              <a
-                href={routes.codeOfConduct()}
-                target="_blank"
-                className="text-gray-700 underline focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0"
-                rel="noreferrer"
-              >
-                Code of Conduct
-              </a>
-            </p>
-          </div>
+              Privacy policy
+            </a>
+          </SignupSwitch>
+          <SignupSwitch
+            state={cocAccepted}
+            stateUpdateFn={setCocAccepted}
+            label="Agree to code of conduct"
+          >
+            I agree to the{' '}
+            <a
+              href={routes.codeOfConduct()}
+              target="_blank"
+              className="text-gray-700 underline focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0"
+              rel="noreferrer"
+            >
+              Code of Conduct
+            </a>
+          </SignupSwitch>
+
           <SubmitButton
             text="Sign up"
             disabled={!(termsAccepted && cocAccepted)}
