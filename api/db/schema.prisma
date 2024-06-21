@@ -9,30 +9,60 @@ generator client {
 }
 
 model User {
-  id                  Int       @id @default(autoincrement())
-  type                UserType  @default(REGULAR)
-  name                String?
-  email               String    @unique
+  id    Int      @id @default(autoincrement())
+  type  UserType @default(REGULAR)
+  email String   @unique
+
   hashedPassword      String
   salt                String
   resetToken          String?
   resetTokenExpiresAt DateTime?
+
+  memberships Membership[]
 }
 
 enum UserType {
+  // Least to most privileges
   REGULAR
+  SUPPORTING
   MODERATOR
   ADMINISTRATOR
+  SUPERADMIN
+}
+
+model Membership {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+
+  user        User           @relation(fields: [userId], references: [id])
+  userId      Int
+  role        MembershipRole @default(USER)
+  type        MembershipType @default(SECONDARY)
+  workspace   Workspace      @relation(fields: [workspaceId], references: [id])
+  workspaceId Int
+
+  @@unique([userId, workspaceId])
+}
+
+enum MembershipRole {
+  // Least to most privileges
+  USER
+  ADMIN
+  OWNER
+}
+
+enum MembershipType {
+  PRIMARY
+  SECONDARY
 }
 
 model Workspace {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 
   type      WorkspaceType @default(INDIVIDUAL)
   handle    String        @unique
-  firstName String?
+  givenName String?
   name      String
 
   avatar String @default("https://upload.wikimedia.org/wikipedia/commons/2/24/Missing_avatar.svg")
@@ -40,6 +70,8 @@ model Workspace {
   // pronouns      String?       @db.VarChar(20)
   // url           String?
   // orcid         String?
+
+  Membership Membership[]
 }
 
 enum WorkspaceType {
