@@ -104,39 +104,44 @@ export const handler = async (
 
   interface UserAttributes {
     name: string
+    email: string
+    handle: string
+    givenName: string
+    familyName: string
   }
 
   const signupOptions: DbAuthHandlerOptions<
     UserType,
     UserAttributes
   >['signup'] = {
-    // Whatever you want to happen to your data on new user signup. Redwood will
-    // check for duplicate usernames before calling this handler. At a minimum
-    // you need to save the `username`, `hashedPassword` and `salt` to your
-    // user table. `userAttributes` contains any additional object members that
-    // were included in the object given to the `signUp()` function you got
-    // from `useAuth()`.
-    //
-    // If you want the user to be immediately logged in, return the user that
-    // was created.
-    //
-    // If this handler throws an error, it will be returned by the `signUp()`
-    // function in the form of: `{ error: 'Error message' }`.
-    //
-    // If this returns anything else, it will be returned by the
-    // `signUp()` function in the form of: `{ message: 'String here' }`.
     handler: ({
       username,
       hashedPassword,
       salt,
       userAttributes: _userAttributes,
     }) => {
+      // TODO: validate handle
+      console.log(username)
+      console.log(_userAttributes.handle)
+
+      // Return user to be immediately logged in
       return db.user.create({
         data: {
           email: username,
           hashedPassword: hashedPassword,
           salt: salt,
-          // name: userAttributes.name
+          memberships: {
+            create: {
+              role: 'OWNER',
+              workspace: {
+                create: {
+                  handle: _userAttributes.handle.toLowerCase(),
+                  givenName: _userAttributes.givenName,
+                  name: _userAttributes.familyName,
+                },
+              },
+            },
+          },
         },
       })
     },
@@ -156,11 +161,7 @@ export const handler = async (
   }
 
   const authHandler = new DbAuthHandler(event, context, {
-    // Provide prisma db client
     db: db,
-
-    // The name of the property you'd call on `db` to access your user table.
-    // i.e. if your Prisma model is named `User` this value would be `user`, as in `db.user`
     authModelAccessor: 'user',
 
     // A map of what dbAuth calls a field to what your database calls it.
@@ -181,18 +182,12 @@ export const handler = async (
     // leak any sensitive information to the client.
     allowedUserFields: ['id', 'email'],
 
-    // Specifies attributes on the cookie that dbAuth sets in order to remember
-    // who is logged in. See https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#restrict_access_to_cookies
     cookie: {
       attributes: {
         HttpOnly: true,
         Path: '/',
         SameSite: 'Strict',
         Secure: process.env.NODE_ENV !== 'development',
-
-        // If you need to allow other domains (besides the api side) access to
-        // the dbAuth session cookie:
-        // Domain: 'example.com',
       },
       name: cookieName,
     },
