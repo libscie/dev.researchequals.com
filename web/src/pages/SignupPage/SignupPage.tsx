@@ -6,7 +6,6 @@ import {
   Label,
   TextField,
   PasswordField,
-  FieldError,
   CheckboxField,
 } from '@redwoodjs/forms'
 import { Link, navigate, routes } from '@redwoodjs/router'
@@ -14,6 +13,7 @@ import { toast } from '@redwoodjs/web/toast'
 
 import { useAuth } from 'src/auth'
 import AuthContainer from 'src/components/AuthContainer/AuthContainer'
+import AuthField from 'src/components/AuthField/AuthField'
 import SignupSwitch from 'src/components/SignupSwitch/SignupSwitch'
 import SubmitButton from 'src/components/SubmitButton/SubmitButton'
 
@@ -76,119 +76,75 @@ const SignupPage = () => {
       form={
         <Form onSubmit={onSubmit} className="flex flex-col">
           <span className="lg:flex lg:gap-8">
-            <span className="flex-grow">
-              <Label
-                name="givenName"
-                className="auth-label"
-                errorClassName="auth-label-error"
-              >
-                Given name <FieldError name="givenName" className="" />
-              </Label>
-              <TextField
-                name="givenName"
-                className="auth-input"
-                errorClassName="auth-input-error"
-                validation={{
-                  required: {
-                    value: true,
-                    message: 'is required',
-                  },
-                }}
-                placeholder="Given name"
-              />
-            </span>
-            <span className="flex-grow">
-              <Label
-                name="familyName"
-                className="auth-label"
-                errorClassName="auth-label-error"
-              >
-                Family name <FieldError name="familyName" className="" />
-              </Label>
-              <TextField
-                name="familyName"
-                className="auth-input"
-                errorClassName="auth-input-error"
-                validation={{
-                  required: {
-                    value: true,
-                    message: 'is required',
-                  },
-                }}
-                placeholder="Family name"
-              />
-            </span>
-          </span>
-          <span className="">
-            <Label
-              name="handle"
-              className="auth-label"
-              errorClassName="auth-label-error"
-            >
-              Handle <FieldError name="handle" className="" />
-            </Label>
-            <TextField
-              name="handle"
-              className="auth-input"
-              errorClassName="auth-input-error"
+            <AuthField
+              Field={TextField}
+              classNames="flex-grow"
+              name="givenName"
+              label="Given name"
+              placeholder="Given name"
               validation={{
                 required: {
                   value: true,
                   message: 'is required',
                 },
-                pattern: {
-                  value: /^[a-zA-Z0-9_]+$/,
-                  message: 'can only contain letters, numbers, and underscores',
-                },
               }}
-              placeholder="researchequals.com/@handle"
-            />
-          </span>
-          <span className="">
-            <Label
-              name="email"
-              className="auth-label"
-              errorClassName="auth-label-error"
-            >
-              Email <FieldError name="email" className="" />
-            </Label>
-            <TextField
-              name="email"
-              className="auth-input"
-              errorClassName="auth-input-error"
               ref={emailRef}
+            />
+            <AuthField
+              Field={TextField}
+              classNames="flex-grow"
+              name="familyName"
+              label="Family name"
+              placeholder="Family name"
               validation={{
                 required: {
                   value: true,
                   message: 'is required',
                 },
               }}
-              placeholder="test@example.com"
             />
           </span>
-          <span className="">
-            <Label
-              name="password"
-              className="auth-label"
-              errorClassName="auth-label-error"
-            >
-              Password <FieldError name="password" className="" />
-            </Label>
-            <PasswordField
-              name="password"
-              className="auth-input"
-              errorClassName="auth-input-error"
-              autoComplete="new-password"
-              ref={passwordRef}
-              validation={{
-                required: {
-                  value: true,
-                  message: 'is required',
-                },
-              }}
-              placeholder="Enter a password"
-            />
-          </span>
+          <AuthField
+            Field={TextField}
+            name="handle"
+            label="Handle"
+            placeholder="researchequals.com/@handle"
+            validation={{
+              required: {
+                value: true,
+                message: 'is required',
+              },
+              pattern: {
+                value: /^[a-zA-Z0-9_]+$/,
+                message: 'can only contain letters, numbers, and underscores',
+              },
+            }}
+          />
+          <AuthField
+            Field={TextField}
+            name="email"
+            label="Email"
+            placeholder="test@example.com"
+            validation={{
+              required: {
+                value: true,
+                message: 'is required',
+              },
+            }}
+          />
+          <AuthField
+            Field={PasswordField}
+            name="password"
+            label="Password"
+            placeholder="Enter your password"
+            validation={{
+              required: {
+                value: true,
+                message: 'is required',
+              },
+            }}
+            autoComplete="new-password"
+          />
           <span className="mx-4 sm:text-left">
             <CheckboxField
               name="show-password"

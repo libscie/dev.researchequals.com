@@ -1,18 +1,13 @@
 import { useRef } from 'react'
 import { useEffect } from 'react'
 
-import {
-  Form,
-  Label,
-  TextField,
-  PasswordField,
-  FieldError,
-} from '@redwoodjs/forms'
+import { Form, TextField, PasswordField } from '@redwoodjs/forms'
 import { Link, navigate, routes } from '@redwoodjs/router'
 import { toast } from '@redwoodjs/web/toast'
 
 import { useAuth } from 'src/auth'
 import AuthContainer from 'src/components/AuthContainer/AuthContainer'
+import AuthField from 'src/components/AuthField/AuthField'
 import SubmitButton from 'src/components/SubmitButton/SubmitButton'
 
 const LoginPage = () => {
@@ -58,56 +53,38 @@ const LoginPage = () => {
       }
       form={
         <Form onSubmit={onSubmit} className="flex flex-col">
-          <span className="">
-            <Label
-              name="email"
-              className="auth-label"
-              errorClassName="auth-label-error"
-            >
-              Email <FieldError name="email" className="" />
-            </Label>
-            <TextField
-              name="email"
-              className="auth-input"
-              errorClassName="auth-input-error"
-              ref={emailRef}
-              validation={{
-                required: {
-                  value: true,
-                  message: 'is required',
-                },
-              }}
-              placeholder="test@example.com"
-            />
-          </span>
-          <span className="">
-            <Label
-              name="password"
-              className="auth-label"
-              errorClassName="auth-label-error"
-            >
-              Password <FieldError name="password" className="" />
-            </Label>
-            <PasswordField
-              name="password"
-              className="auth-input"
-              errorClassName="auth-input-error"
-              autoComplete="current-password"
-              validation={{
-                required: {
-                  value: true,
-                  message: 'is required',
-                },
-              }}
-              placeholder="Enter your password"
-            />
-            <Link
-              to={routes.forgotPassword()}
-              className="my-2 block text-sm underline"
-            >
-              Forgot Password?
-            </Link>
-          </span>
+          <AuthField
+            Field={TextField}
+            name="email"
+            label="Email"
+            placeholder="test@example.com"
+            validation={{
+              required: {
+                value: true,
+                message: 'is required',
+              },
+            }}
+            ref={emailRef}
+          />
+          <AuthField
+            Field={PasswordField}
+            name="password"
+            label="Password"
+            placeholder="Enter your password"
+            validation={{
+              required: {
+                value: true,
+                message: 'is required',
+              },
+            }}
+            autoComplete="current-password"
+          />
+          <Link
+            to={routes.forgotPassword()}
+            className="my-2 block text-sm underline"
+          >
+            Forgot Password?
+          </Link>
           <SubmitButton text="Log in" />
         </Form>
       }

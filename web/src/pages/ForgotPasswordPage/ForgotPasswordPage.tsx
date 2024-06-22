@@ -1,12 +1,14 @@
 import { useEffect, useRef } from 'react'
 
-import { Form, Label, TextField, FieldError } from '@redwoodjs/forms'
+import { Form, TextField } from '@redwoodjs/forms'
 import { navigate, routes } from '@redwoodjs/router'
 import { toast } from '@redwoodjs/web/toast'
 
 import { useAuth } from 'src/auth'
 import AuthContainer from 'src/components/AuthContainer/AuthContainer'
 import SubmitButton from 'src/components/SubmitButton/SubmitButton'
+
+import AuthField from '../../components/AuthField/AuthField'
 
 const ForgotPasswordPage = () => {
   const { isAuthenticated, forgotPassword } = useAuth()
@@ -44,28 +46,19 @@ const ForgotPasswordPage = () => {
       subtitle={null}
       form={
         <Form onSubmit={onSubmit} className="flex flex-col">
-          <span className="">
-            <Label
-              name="email"
-              className="auth-label"
-              errorClassName="auth-label-error"
-            >
-              Email <FieldError name="email" className="" />
-            </Label>
-            <TextField
-              name="email"
-              className="auth-input"
-              errorClassName="auth-input-error"
-              ref={emailRef}
-              validation={{
-                required: {
-                  value: true,
-                  message: 'is required',
-                },
-              }}
-              placeholder="test@example.com"
-            />
-          </span>
+          <AuthField
+            Field={TextField}
+            ref={emailRef}
+            name="email"
+            label="Email"
+            placeholder="test@example.com"
+            validation={{
+              required: {
+                value: true,
+                message: 'is required',
+              },
+            }}
+          />
           <SubmitButton text="Submit" />
         </Form>
       }

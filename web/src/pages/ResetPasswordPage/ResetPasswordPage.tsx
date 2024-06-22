@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 
-import { Form, Label, PasswordField, FieldError } from '@redwoodjs/forms'
+import { Form, PasswordField } from '@redwoodjs/forms'
 import { navigate, routes } from '@redwoodjs/router'
 import { toast } from '@redwoodjs/web/toast'
 
 import { useAuth } from 'src/auth'
 import AuthContainer from 'src/components/AuthContainer/AuthContainer'
+import AuthField from 'src/components/AuthField/AuthField'
 import SubmitButton from 'src/components/SubmitButton/SubmitButton'
 
 const ResetPasswordPage = ({ resetToken }: { resetToken: string }) => {
@@ -57,32 +58,23 @@ const ResetPasswordPage = ({ resetToken }: { resetToken: string }) => {
       title="Reset Password"
       subtitle={null}
       form={
-        <Form onSubmit={onSubmit} className="rw-form-wrapper">
+        <Form onSubmit={onSubmit}>
           <div className="text-left">
-            <Label
-              name="password"
-              className="auth-label"
-              errorClassName="auth-label auth-label-error"
-            >
-              New Password
-            </Label>
-            <PasswordField
+            <AuthField
+              Field={PasswordField}
               name="password"
               autoComplete="new-password"
-              className="auth-input"
-              errorClassName="auth-input auth-input-error"
-              disabled={!enabled}
-              ref={passwordRef}
+              label="New Password"
+              placeholder="Enter new password"
               validation={{
                 required: {
                   value: true,
                   message: 'New Password is required',
                 },
               }}
-              placeholder="Enter new password"
+              ref={passwordRef}
+              disabled={!enabled}
             />
-
-            <FieldError name="password" className="rw-field-error" />
           </div>
 
           <SubmitButton text="Submit" disabled={!enabled} />
