@@ -30,18 +30,19 @@ const LoginPage = () => {
   }, [])
 
   const onSubmit = async (data: Record<string, string>) => {
-    const response = await logIn({
-      username: data.email,
-      password: data.password,
-    })
-
-    if (response.message) {
-      toast(response.message)
-    } else if (response.error) {
-      toast.error(response.error)
-    } else {
-      toast.success('Welcome back!')
-    }
+    toast.promise(
+      logIn({
+        username: data.email,
+        password: data.password,
+      }),
+      {
+        loading: 'Logging in...',
+        success: 'Logged in!',
+        error: (e) => {
+          return `Error: ${e}`
+        },
+      }
+    )
   }
 
   return (

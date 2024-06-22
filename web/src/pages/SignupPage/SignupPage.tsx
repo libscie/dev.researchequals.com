@@ -43,23 +43,23 @@ const SignupPage = () => {
   }, [])
 
   const onSubmit = async (data: Record<string, string>) => {
-    const response = await signUp({
-      // username here because of RedwoodJS
-      username: data.email,
-      handle: data.handle,
-      password: data.password,
-      givenName: data.givenName,
-      familyName: data.familyName,
-    })
-
-    if (response.message) {
-      toast(response.message)
-    } else if (response.error) {
-      toast.error(response.error)
-    } else {
-      // user is signed in automatically
-      toast.success('Welcome!')
-    }
+    toast.promise(
+      signUp({
+        // username here because of RedwoodJS
+        username: data.email,
+        handle: data.handle,
+        password: data.password,
+        givenName: data.givenName,
+        familyName: data.familyName,
+      }),
+      {
+        loading: 'Signing up...',
+        success: 'Account created!',
+        error: (e) => {
+          return `Error: ${e}`
+        },
+      }
+    )
   }
 
   return (
