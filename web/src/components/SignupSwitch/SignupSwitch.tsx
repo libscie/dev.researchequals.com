@@ -51,7 +51,9 @@ const SignupSwitch = ({ state, stateUpdateFn, label, children }) => {
           </span>
         </span>
       </Switch>
-      <p className="mx-2 text-base font-normal text-gray-500">{children}</p>
+      <p className="mx-2 text-left text-base font-normal text-gray-500">
+        {children}
+      </p>
     </div>
   )
 }
