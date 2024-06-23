@@ -18,7 +18,7 @@ const NavigationBarDynamic = () => {
     <>
       {loading ? (
         <svg
-          className="... mr-3 h-5 w-5 animate-spin"
+          className="mr-3 h-5 w-5 animate-spin fill-violet-500"
           viewBox="0 0 24 24"
         ></svg>
       ) : isAuthenticated ? (
@@ -35,36 +35,25 @@ const NavigationBarDynamic = () => {
               anchor={{ to: 'top', gap: 8 }}
               className="w-52 origin-top-right rounded-xl bg-violet-200 bg-opacity-80 p-1 text-sm/6 text-violet-950 backdrop-blur-sm focus:outline-none"
             >
-              <MenuItem>
-                <Link
-                  to={routes.author()}
-                  className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
-                >
-                  <img
-                    src="https://www.chjh.nl/content/images/2022/04/220329_ChrisHartgerink_384_v1.jpg"
-                    alt="avatar"
-                    // className="-mr-4 h-20 w-20 rounded-full object-cover"
-                    className="size-6 rounded-full fill-violet-950 object-cover group-data-[focus]:fill-white"
-                  />
-                  {/* <UserAvatarFilledAlt /> */}
-                  chartgerink
-                </Link>
-              </MenuItem>
-              <MenuItem>
-                <Link
-                  to={routes.author()}
-                  className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
-                >
-                  <img
-                    src="https://github.com/libscie/design/blob/main/libscie/libscie-logomark-256.png?raw=true"
-                    alt="avatar"
-                    // className="-mr-4 h-20 w-20 rounded-full object-cover"
-                    className="size-6 rounded-full fill-violet-950 object-cover group-data-[focus]:fill-white"
-                  />
-                  {/* <UserAvatarFilledAlt /> */}
-                  libscie
-                </Link>
-              </MenuItem>
+              {currentUser.memberships.map((membership) => {
+                return (
+                  <MenuItem key={membership.workspace.handle}>
+                    <Link
+                      to={routes.author()}
+                      className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
+                    >
+                      <img
+                        src={membership.workspace.avatar}
+                        alt="avatar"
+                        // className="-mr-4 h-20 w-20 rounded-full object-cover"
+                        className="size-6 rounded-full fill-violet-950 object-cover group-data-[focus]:fill-white"
+                      />
+                      {/* <UserAvatarFilledAlt /> */}
+                      {membership.workspace.handle}
+                    </Link>
+                  </MenuItem>
+                )
+              })}
               {currentUser.type != 'REGULAR' && (
                 <>
                   <hr className="mx-auto my-2 p-0" />
