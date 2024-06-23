@@ -22,6 +22,11 @@ export const settingsNav = [
     href: routes.settingsWorkspace(),
     icon: UserAvatarFilledAlt,
   },
+  {
+    name: 'Workspace',
+    href: routes.settingsWorkspace(),
+    icon: 'https://upload.wikimedia.org/wikipedia/commons/2/24/Missing_avatar.svg',
+  },
 ]
 
 export const searchNav = [

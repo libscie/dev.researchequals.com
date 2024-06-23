@@ -14,7 +14,7 @@ interface SecondaryNavProps {
 interface SecondaryNavItemProps {
   name: string
   href: string
-  icon: CarbonIconType
+  icon: CarbonIconType | string
 }
 
 const SecondaryNav = ({
@@ -45,15 +45,24 @@ const SecondaryNav = ({
                     'group flex gap-x-3 rounded-md py-2 pl-2 pr-3 text-sm font-semibold leading-6'
                   )}
                 >
-                  <item.icon
-                    className={classNames(
-                      item.name === current
-                        ? 'text-white'
-                        : 'text-gray-400 group-hover:text-white',
-                      'h-6 w-6 shrink-0'
-                    )}
-                    aria-hidden="true"
-                  />
+                  {typeof item.icon === 'string' ? (
+                    // eslint-disable-next-line jsx-a11y/alt-text
+                    <img
+                      src={item.icon}
+                      className={classNames('h-6 w-6 shrink-0')}
+                      aria-hidden="true"
+                    />
+                  ) : (
+                    <item.icon
+                      className={classNames(
+                        item.name === current
+                          ? 'text-white'
+                          : 'text-gray-400 group-hover:text-white',
+                        'h-6 w-6 shrink-0'
+                      )}
+                      aria-hidden="true"
+                    />
+                  )}
                   {item.name}
                 </Link>
               </li>
