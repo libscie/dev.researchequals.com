@@ -1,4 +1,6 @@
-import { Router, Route, Set } from '@redwoodjs/router'
+import { Login } from '@carbon/icons-react'
+
+import { Router, Route, Set, PrivateSet } from '@redwoodjs/router'
 
 import { useAuth } from './auth'
 import AuthLayout from './layouts/AuthLayout/AuthLayout'
@@ -22,9 +24,11 @@ const Routes = () => {
         <Route path="/drafts" page={DraftsPage} name="drafts" />
         <Route path="/moderation" page={ModerationPage} name="moderation" />
         <Route path="/search" page={SearchPage} name="search" />
-        <Route path="/settings" page={SettingsPage} name="settings" />
-        <Route path="/settings/security" page={SettingsSecurityPage} name="settingsSecurity" />
-        <Route path="/settings/workspace" page={SettingsWorkspacePage} name="settingsWorkspace" />
+        <PrivateSet unauthenticated="login">
+          <Route path="/settings" page={SettingsPage} name="settings" />
+          <Route path="/settings/security" page={SettingsSecurityPage} name="settingsSecurity" />
+          <Route path="/settings/workspace" page={SettingsWorkspacePage} name="settingsWorkspace" />
+        </PrivateSet>
         <Route path="/works" page={WorksPage} name="works" />
       </Set>
       <Set wrap={MarketingLayout} prerender>
