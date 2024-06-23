@@ -1,5 +1,3 @@
-import { Login } from '@carbon/icons-react'
-
 import { Router, Route, Set, PrivateSet } from '@redwoodjs/router'
 
 import { useAuth } from './auth'
