@@ -19,10 +19,10 @@ const Routes = () => {
         <Route path="/administration" page={AdministrationPage} name="administration" />
         <Route path="/curate" page={CuratePage} name="curate" />
         <Route path="/@chartgerink" page={AuthorPage} name="author" />
-        <Route path="/drafts" page={DraftsPage} name="drafts" />
-        <Route path="/moderation" page={ModerationPage} name="moderation" />
         <Route path="/search" page={SearchPage} name="search" />
         <PrivateSet unauthenticated="login">
+          <Route path="/drafts" page={DraftsPage} name="drafts" />
+          <Route path="/moderation" page={ModerationPage} name="moderation" />
           <Route path="/settings" page={SettingsPage} name="settings" />
           <Route path="/settings/security" page={SettingsSecurityPage} name="settingsSecurity" />
           <Route path="/settings/workspace" page={SettingsWorkspacePage} name="settingsWorkspace" />
