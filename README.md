@@ -1,5 +1,7 @@
 # ResearchEquals
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/271af12d-2f2c-4032-b715-0adca1189116/deploy-status)](https://app.netlify.com/sites/dev-researchequals-com/deploys)
+
 This repository contains the second iteration of ResearchEquals that we are developing. For the in production code (`v1`), please see `libscie/ResearchEquals.com`.
 
 ## Development
