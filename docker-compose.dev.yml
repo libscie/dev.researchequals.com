@@ -31,6 +31,8 @@ services:
       - '3306:3306'
     volumes:
       - mysql:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+
 
   # After starting with `docker compose -f ./docker-compose.dev.yml up`,
   # use the console to run commands in the container:
