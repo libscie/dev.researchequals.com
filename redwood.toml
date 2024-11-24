@@ -6,7 +6,7 @@
 # https://redwoodjs.com/docs/app-configuration-redwood-toml
 
 [web]
-  title = "Redwood App"
+  title = "ResearchEquals"
   port = 8910
   apiUrl = "/.netlify/functions"
   includeEnvironmentVariables = [
