@@ -11,3 +11,32 @@
 /**
  * END --- SETUP TAILWINDCSS EDIT
  */
+
+body {
+  background-color: #f5f3ff; /* violet-50 */
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    #ddd6fe 1px, /* violet-200 */
+    transparent 0
+  );
+  background-size: 2rem 2rem;
+  margin: 0;
+  color: #2e1065; /* violet-950 */
+  font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans',
+    Arial, sans-serif;
+  font-weight: normal;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1e1b4b; /* indigo-950 */
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      #312e81 1px, /* indigo-900 */
+      transparent 0
+    );
+    background-size: 2rem 2rem;
+    color: #f5f3ff; /* violet-50 */
+  }
+}
