@@ -69,3 +69,10 @@ yarn rw prisma migrate dev
 ```
 
 <!-- For more information on contributing to ResearchEquals, please see the contributing docs. -->
+
+## Terminology
+
+| Old | New |
+| --- | ---  |
+| Workspace | Profile |
+| Collection | Magazine|
