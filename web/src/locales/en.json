@@ -1,0 +1,11 @@
+{
+  "HomePage": {
+    "title": "Homepage",
+    "description": "Testing this information"
+  },
+  "CookieBanner": {
+    "accept": "Accept",
+    "decline": "Decline",
+    "description": "We only use essential cookies."
+  }
+}

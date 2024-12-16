@@ -1,4 +1,5 @@
 import { getCookieConsentValue } from 'react-cookie-consent'
+import { useTranslation } from 'react-i18next'
 
 import { Metadata } from '@redwoodjs/web'
 
@@ -7,15 +8,17 @@ import HeaderBar from 'src/components/HeaderBar/HeaderBar'
 
 const HomePage = () => {
   const cookiesAccepted = getCookieConsentValue()
+  const { t } = useTranslation()
 
   return (
     <>
-      <Metadata title="Home" description="Home page" />
+      <Metadata
+        title={t('HomePage.title')}
+        description={t('HomePage.description')}
+      />
 
-      <h1>HomePage</h1>
-      <p>
-        Find me in <code>./web/src/pages/HomePage/HomePage.tsx</code>
-      </p>
+      <h1>{t('HomePage.title')}</h1>
+      <p>{t('HomePage.description')}</p>
       <HeaderBar>
         {cookiesAccepted != null ? 'yes' : <CookieBanner />}
       </HeaderBar>

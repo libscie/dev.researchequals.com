@@ -1,6 +1,9 @@
 import CookieConsent from 'react-cookie-consent'
+import { useTranslation } from 'react-i18next'
 
 const CookieBanner = () => {
+  const { t } = useTranslation()
+
   return (
     <CookieConsent
       disableStyles={true}
@@ -11,14 +14,14 @@ const CookieBanner = () => {
       // containerClasses="fixed bottom-8 z-[9999] m-0 w-full select-none p-0"
       // contentClasses="mx-auto h-16 w-5/6 rounded-full bg-violet-200 bg-opacity-80 pl-8 pr-4 align-middle font-serif text-xl text-violet-950 backdrop-blur-sm lg:w-2/3 text-capitalize"
       enableDeclineButton
-      buttonText="Accept"
-      declineButtonText="Decline"
+      buttonText={t('CookieBanner.accept')}
+      declineButtonText={t('CookieBanner.decline')}
       onAccept={() => window.location.reload()}
       onDecline={() => window.location.reload()}
       contentClasses="flex-grow"
     >
       <div className="flex h-full items-center">
-        <nav className="flex flex-grow">We only use essential cookies.</nav>
+        <nav className="flex flex-grow">{t('CookieBanner.description')}</nav>
       </div>
     </CookieConsent>
   )

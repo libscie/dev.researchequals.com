@@ -9,6 +9,7 @@ import { AuthProvider, useAuth } from './auth'
 
 import './index.css'
 import './scaffold.css'
+import './i18n'
 
 
 interface AppProps {
