@@ -1,5 +1,6 @@
-// import { Link, routes } from '@redwoodjs/router'
 import { Metadata } from '@redwoodjs/web'
+
+import HeaderBar from 'src/components/HeaderBar/HeaderBar'
 
 const HomePage = () => {
   return (
@@ -10,10 +11,7 @@ const HomePage = () => {
       <p>
         Find me in <code>./web/src/pages/HomePage/HomePage.tsx</code>
       </p>
-      {/*
-          My default route is named `home`, link to me with:
-          `<Link to={routes.home()}>Home</Link>`
-      */}
+      <HeaderBar>{undefined}</HeaderBar>
     </>
   )
 }
