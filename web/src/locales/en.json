@@ -7,5 +7,12 @@
     "accept": "Accept",
     "decline": "Decline",
     "description": "We only use essential cookies."
+  },
+  "Footer": {
+    "title": "Site Navigation",
+    "about": "About",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "copyright": "Copyright"
   }
 }

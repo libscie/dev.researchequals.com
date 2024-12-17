@@ -27,19 +27,7 @@ body {
   font-weight: normal;
 }
 
-/* Dark mode styles */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #1e1b4b; /* indigo-950 */
-    background-image: radial-gradient(
-      circle at 1px 1px,
-      #312e81 1px, /* indigo-900 */
-      transparent 0
-    );
-    background-size: 2rem 2rem;
-    color: #f5f3ff; /* violet-50 */
-  }
-}
+
 
 h1 {
   font-size: 4rem;
@@ -53,4 +41,32 @@ h5 {
   font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052,
     serif;
   font-weight: normal;
+}
+
+main,
+article {
+  min-height: 100vh;
+}
+
+hr {
+  border: 1px solid #2e1065; /* violet-950 */
+  margin: 0rem auto 0rem auto
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1e1b4b; /* indigo-950 */
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      #312e81 1px, /* indigo-900 */
+      transparent 0
+    );
+    background-size: 2rem 2rem;
+    color: #f5f3ff; /* violet-50 */
+  }
+
+  hr {
+    border: 1px solid #f5f3ff; /* violet-50 */
+  }
 }
