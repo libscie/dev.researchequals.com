@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next'
 
+import { Link, routes } from '@redwoodjs/router'
+
 const Footer = () => {
   const { t } = useTranslation()
 
@@ -42,6 +44,14 @@ const Footer = () => {
             >
               {t('Footer.copyright')}
             </a>
+          </li>
+          <li>
+            <Link
+              className="decoration-2 underline-offset-4 hover:underline"
+              to={routes.sitemap()}
+            >
+              {t('Footer.sitemap')}
+            </Link>
           </li>
         </ol>
       </div>
