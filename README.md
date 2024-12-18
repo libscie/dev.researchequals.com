@@ -2,9 +2,17 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/271af12d-2f2c-4032-b715-0adca1189116/deploy-status)](https://app.netlify.com/sites/dev-researchequals-com/deploys)
 
-This repository contains the second iteration of ResearchEquals that we are developing. For the in production code (`v1`), please see `libscie/ResearchEquals.com`.
+This repository contains the second iteration of ResearchEquals that we are developing.
+
+For the in production code (`v1`), please see `libscie/ResearchEquals.com`.
 
 ## Development
+
+The tech stack is based on [RedwoodJS](https://redwoodjs.com) ([Redwood Documentation](https://docs.redwoodjs.com)).
+
+### Local Installation
+
+We want to make it easy for you to get started developing. If you prefer to install everything locally, pick your OS and follow the steps. We are assuming you are starting from scratch.
 
 <details>
   <summary>macOS installation</summary>
@@ -55,9 +63,9 @@ When you have followed the above instructions for your relevant operating system
 yarn rw dev
 ```
 
-### Docker
+### Docker Installation
 
-We also supply Docker instructions for those who want those:
+We also supply a Docker environment to get up and running. If you are unfamiliar with Docker, you may not want to take this route.
 
 ```sh
 docker compose -f docker-compose.dev.yml up
@@ -75,4 +83,4 @@ yarn rw prisma migrate dev
 | Old | New |
 | --- | ---  |
 | Workspace | Profile |
-| Collection | Magazine|
+| Collection | Magazine |
