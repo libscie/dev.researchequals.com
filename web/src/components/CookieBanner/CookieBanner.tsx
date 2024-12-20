@@ -8,9 +8,9 @@ const CookieBanner = () => {
     <CookieConsent
       disableStyles={true}
       // cookieName="myAwesomeCookieName2"
-      buttonClasses="rounded-md p-2 px-4 hover:bg-emerald-800 hover:text-white"
-      declineButtonClasses="rounded-md p-2 px-4 hover:bg-red-800 hover:text-white"
-      containerClasses="flex w-full"
+      buttonClasses="rounded-full p-2 px-4 hover:bg-emerald-800 hover:text-white"
+      declineButtonClasses="rounded-full p-2 px-4 hover:bg-red-800 hover:text-white"
+      containerClasses="flex w-full pl-2"
       // containerClasses="fixed bottom-8 z-[9999] m-0 w-full select-none p-0"
       // contentClasses="mx-auto h-16 w-5/6 rounded-full bg-violet-200 bg-opacity-80 pl-8 pr-4 align-middle font-serif text-xl text-violet-950 backdrop-blur-sm lg:w-2/3 text-capitalize"
       enableDeclineButton
