@@ -1,7 +1,16 @@
 {
   "HomePage": {
-    "title": "Homepage",
+    "title": "Home",
     "description": "Testing this information"
+  },
+  "FindPage": {
+    "title": "Find"
+  },
+  "WritePage": {
+    "title": "Write"
+  },
+  "CollectPage": {
+    "title": "Collect"
   },
   "CookieBanner": {
     "accept": "Accept",
