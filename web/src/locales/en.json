@@ -1,6 +1,7 @@
 {
   "HomePage": {
     "title": "Home",
+    "hero": "Find, collect, and write research",
     "description": "Testing this information"
   },
   "FindPage": {
@@ -24,5 +25,17 @@
     "privacy": "Privacy",
     "copyright": "Copyright",
     "sitemap": "Sitemap"
+  },
+  "QuickSearch": {
+    "placeholder": "Search...",
+    "projects": "Projects",
+    "authors": "Authors",
+    "help-title": "Help with searching",
+    "help-description": "Use this tool to quickly search for profiles and projects across our entire platform. You can also use the search modifiers found in the footer below to limit the results to just profiles or projects.",
+    "no-results-title": "No results found",
+    "no-results-description": "We couldn't find anything with that term. Please try again.",
+    "help-p1": "Search for research output. Use",
+    "help-p2": "for Authors, and ",
+    "help-p3": "for help."
   }
 }
