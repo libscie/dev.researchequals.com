@@ -14,7 +14,13 @@ const ContentLayout = ({ children }: ContentLayoutProps) => {
 
   return (
     <>
-      <main className="h-100vh">{children}</main>
+      <a
+        href="#main-content"
+        className="sr-only font-serif text-2xl font-medium focus:not-sr-only focus:absolute focus:left-0 focus:top-0 focus:bg-violet-200 focus:p-2 focus:text-violet-950"
+      >
+        Skip to main content
+      </a>
+      <main className="h-100vh container mx-auto">{children}</main>
       <HeaderBar>
         {cookiesAccepted != null ? <Navigation /> : <CookieBanner />}
       </HeaderBar>

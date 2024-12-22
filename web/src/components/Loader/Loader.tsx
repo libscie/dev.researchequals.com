@@ -7,7 +7,7 @@ const Loader = ({ stroke }: LoaderProps) => {
     <svg
       width="100%"
       height="100%"
-      className="h-8 w-8 animate-spin"
+      className="mx-auto h-8 w-8 animate-spin"
       viewBox="0 0 38 38"
       xmlns="http://www.w3.org/2000/svg"
       stroke={stroke}

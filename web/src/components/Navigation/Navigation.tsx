@@ -11,17 +11,17 @@ const Navigation = () => {
 
   return (
     <nav className="flex flex-grow items-center justify-between">
-      <div className="hidden rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline">
+      <div className="hidden rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
         <Link to={routes.home()}>{t('HomePage.title')}</Link>
       </div>
       <div className="mx-auto flex flex-grow text-left sm:inline sm:text-center [&>a]:text-violet-950 [&>a]:no-underline hover:[&>a]:text-white">
-        <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline">
+        <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
           <Link to={routes.home()}>{t('FindPage.title')}</Link>
         </div>
-        <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline">
+        <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
           <Link to={routes.home()}>{t('WritePage.title')}</Link>
         </div>
-        <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline">
+        <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
           <Link to={routes.home()}>{t('CollectPage.title')}</Link>
         </div>
       </div>
@@ -31,12 +31,12 @@ const Navigation = () => {
       ) : isAuthenticated ? (
         <button
           onClick={logOut}
-          className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white"
+          className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white dark:hover:bg-violet-50 dark:hover:text-violet-950"
         >
           Log out
         </button>
       ) : (
-        <div className="rounded-full bg-violet-950 p-2 px-4 text-white ring-offset-2 ring-offset-current hover:ring-2 hover:ring-violet-950">
+        <div className="rounded-full bg-violet-950 p-2 px-4 text-white ring-offset-2 ring-offset-current hover:ring-2 hover:ring-violet-950 dark:bg-violet-50 dark:text-violet-950 dark:hover:ring-violet-50">
           <Link to={routes.login()}>Log In</Link>
         </div>
       )}
