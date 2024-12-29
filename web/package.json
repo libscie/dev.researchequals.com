@@ -13,11 +13,11 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
-    "@redwoodjs/auth-dbauth-web": "8.4.1",
-    "@redwoodjs/forms": "8.4.1",
-    "@redwoodjs/router": "8.4.1",
-    "@redwoodjs/web": "8.4.1",
-    "@redwoodjs/web-server": "8.4.1",
+    "@redwoodjs/auth-dbauth-web": "8.4.2",
+    "@redwoodjs/forms": "8.4.2",
+    "@redwoodjs/router": "8.4.2",
+    "@redwoodjs/web": "8.4.2",
+    "@redwoodjs/web-server": "8.4.2",
     "@simplewebauthn/browser": "^7",
     "i18n": "^0.15.1",
     "i18next": "^24.1.0",
@@ -29,7 +29,7 @@
     "zustand": "^5.0.2"
   },
   "devDependencies": {
-    "@redwoodjs/vite": "8.4.1",
+    "@redwoodjs/vite": "8.4.2",
     "@types/i18n": "^0",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
