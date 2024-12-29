@@ -16,7 +16,7 @@ const Routes = () => {
   return (
     <Router useAuth={useAuth}>
       <Set wrap={ContentLayout}>
-        <Route path="/home" page={HomePage} name="home" />
+        <Route path="/" page={HomePage} name="home" />
         <Route path="/sitemap" page={SitemapPage} name="sitemap" />
       </Set>
       <Route path="/login" page={LoginPage} name="login" />
