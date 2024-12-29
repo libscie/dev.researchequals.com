@@ -78,9 +78,22 @@ yarn rw prisma migrate dev
 
 <!-- For more information on contributing to ResearchEquals, please see the contributing docs. -->
 
-## Terminology
+<!-- ## Terminology
 
 | Old | New |
 | --- | ---  |
 | Workspace | Profile |
-| Collection | Magazine |
+| Collection | Magazine | -->
+
+<!-- ## Quality Assurance
+
+We want our software to be of high quality, follow best practices, and be compliant with various regulations across the world. In short, we want ResearchEquals to be a great experience. To that end, we continuously expand our testing procedures for all the components and pages we include.
+
+Right now we test for the following:
+
+* 100% typed components
+* [WCAG 2.1 AA standard](https://www.w3.org/TR/WCAG21/) (component level)
+* Responsive design
+* Support for localization
+  * Support for LTR and RTL languages
+* -->

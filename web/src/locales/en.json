@@ -7,11 +7,14 @@
   "FindPage": {
     "title": "Find"
   },
+  "CollectPage": {
+    "title": "Collect"
+  },
   "WritePage": {
     "title": "Write"
   },
-  "CollectPage": {
-    "title": "Collect"
+  "OrganizePage": {
+    "title": "Organize"
   },
   "CookieBanner": {
     "accept": "Accept",

@@ -19,10 +19,13 @@ const Navigation = () => {
           <Link to={routes.home()}>{t('FindPage.title')}</Link>
         </div>
         <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
+          <Link to={routes.home()}>{t('CollectPage.title')}</Link>
+        </div>
+        <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
           <Link to={routes.home()}>{t('WritePage.title')}</Link>
         </div>
         <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
-          <Link to={routes.home()}>{t('CollectPage.title')}</Link>
+          <Link to={routes.home()}>{t('OrganizePage.title')}</Link>
         </div>
       </div>
       {/* TODO: This part needs to be revised to be dynamic */}
