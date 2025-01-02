@@ -68,8 +68,8 @@ export default function QuickSearch() {
                     <ComboboxOption
                       as="a"
                       key={project.id}
-                      value={project.doi}
-                      href={project.doi}
+                      value={`/${project.id}`}
+                      href={`/${project.id}`}
                       target="_blank"
                       rel="noreferrer"
                       className="group flex select-none items-center px-4 py-2 data-[focus]:bg-violet-900 data-[focus]:text-white dark:data-[focus]:bg-indigo-900"
@@ -92,8 +92,8 @@ export default function QuickSearch() {
                     <ComboboxOption
                       as="a"
                       key={user.id}
-                      value={user.orcid}
-                      href={user.orcid}
+                      value={`/${user.id}`}
+                      href={`/${user.id}`}
                       target="_blank"
                       rel="noreferrer"
                       className="flex select-none items-center px-4 py-2 data-[focus]:bg-violet-900 data-[focus]:text-white dark:data-[focus]:bg-indigo-900"
