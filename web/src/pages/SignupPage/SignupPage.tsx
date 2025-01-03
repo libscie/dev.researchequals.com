@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
+import { useTranslation } from 'react-i18next'
+
 import {
   Label,
   TextField,
@@ -20,6 +22,7 @@ const SignupPage = () => {
   const { isAuthenticated, signUp } = useAuth()
   const [termsAccepted, setTermsAccepted] = useState(false)
   const [cocAccepted, setCocAccepted] = useState(false)
+  const { t } = useTranslation()
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -53,10 +56,10 @@ const SignupPage = () => {
         familyName: data.familyName,
       }),
       {
-        loading: 'Signing up...',
-        success: 'Account created!',
+        loading: t('Auth.signing-up'),
+        success: t('Auth.sign-up-success'),
         error: (e) => {
-          return `Error: ${e}`
+          return `${t('Auth.error')}: ${e}`
         },
       }
     )
@@ -64,12 +67,12 @@ const SignupPage = () => {
 
   return (
     <AuthContainer
-      title="Sign up"
+      title={t('Auth.sign-up')}
       subtitle={
         <>
-          <span>Already have an account?</span>{' '}
+          <span>{t('Auth.existing-account')}</span>{' '}
           <Link to={routes.login()} className="underline">
-            Log in!
+            {t('Auth.log-in')}
           </Link>
         </>
       }
@@ -83,7 +86,8 @@ const SignupPage = () => {
               className="auth-label"
               errorClassName="auth-label-error"
             >
-              Given Name <FieldError name="givenName" className="" />
+              {t('Auth.given-name')}{' '}
+              <FieldError name="givenName" className="" />
             </Label>
             <TextField
               name="givenName"
@@ -93,10 +97,10 @@ const SignupPage = () => {
               validation={{
                 required: {
                   value: true,
-                  message: 'is required',
+                  message: t('Auth.is-required'),
                 },
               }}
-              placeholder="Given Name"
+              placeholder={t('Auth.given-name')}
             />
           </span>
           {/* Family name */}
@@ -106,7 +110,8 @@ const SignupPage = () => {
               className="auth-label"
               errorClassName="auth-label-error"
             >
-              Family Name <FieldError name="familyName" className="" />
+              {t('Auth.family-name')}{' '}
+              <FieldError name="familyName" className="" />
             </Label>
             <TextField
               name="familyName"
@@ -115,10 +120,10 @@ const SignupPage = () => {
               validation={{
                 required: {
                   value: true,
-                  message: 'is required',
+                  message: t('Auth.is-required'),
                 },
               }}
-              placeholder="Family Name"
+              placeholder={t('Auth.family-name')}
             />
           </span>
         </span>
@@ -129,7 +134,7 @@ const SignupPage = () => {
             className="auth-label"
             errorClassName="auth-label-error"
           >
-            Handle <FieldError name="handle" className="" />
+            {t('Auth.handle')} <FieldError name="handle" className="" />
           </Label>
           <TextField
             name="handle"
@@ -138,14 +143,14 @@ const SignupPage = () => {
             validation={{
               required: {
                 value: true,
-                message: 'is required',
+                message: t('Auth.is-required'),
               },
               pattern: {
                 value: /^[a-zA-Z0-9_]+$/,
-                message: 'can only contain letters, numbers, and underscores',
+                message: t('Auth.password-pattern-error'),
               },
             }}
-            placeholder="Username"
+            placeholder={t('Auth.handle')}
           />
         </span>
         {/* Email */}
@@ -155,7 +160,7 @@ const SignupPage = () => {
             className="auth-label"
             errorClassName="auth-label-error"
           >
-            Email <FieldError name="email" className="" />
+            {t('Auth.email')} <FieldError name="email" className="" />
           </Label>
           <TextField
             name="email"
@@ -164,7 +169,7 @@ const SignupPage = () => {
             validation={{
               required: {
                 value: true,
-                message: 'is required',
+                message: t('Auth.is-required'),
               },
             }}
             placeholder="test@example.com"
@@ -177,7 +182,7 @@ const SignupPage = () => {
             className="auth-label"
             errorClassName="auth-label-error"
           >
-            Password <FieldError name="password" className="" />
+            {t('Auth.password')} <FieldError name="password" className="" />
           </Label>
           <PasswordField
             name="password"
@@ -187,11 +192,11 @@ const SignupPage = () => {
             validation={{
               required: {
                 value: true,
-                message: 'is required',
+                message: t('Auth.is-required'),
               },
             }}
             autoComplete="new-password"
-            placeholder="Enter your password"
+            placeholder={t('Auth.password-placeholder')}
           />
         </span>
         <span className="mx-4 sm:text-left">
@@ -201,51 +206,51 @@ const SignupPage = () => {
             className="my-2 mr-2 h-4 w-4 rounded border-gray-300 bg-gray-200 text-violet-950 focus:ring-violet-500"
           />
           <Label name="show-password" className="text-sm">
-            Show password
+            {t('Auth.show-password')}
           </Label>
         </span>
         <SignupSwitch
           state={termsAccepted}
           stateUpdateFn={setTermsAccepted}
-          label="Agree to terms of use and privacy policy"
+          label={t('Auth.SignUp.tos-label')}
         >
-          I agree to the{' '}
+          {t('Auth.SignUp.i-agree')}{' '}
           <a
             href={routes.home()}
             target="_blank"
             className="text-gray-700  underline focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0"
             rel="noreferrer"
           >
-            Terms of use
+            {t('Auth.SignUp.tos')}
           </a>{' '}
-          and to the processing of my personal data according to the{' '}
+          {t('Auth.SignUp.and')}{' '}
           <a
             href={routes.home()}
             target="_blank"
             className="text-gray-700  underline focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0"
             rel="noreferrer"
           >
-            Privacy policy
+            {t('Auth.SignUp.pp')}
           </a>
         </SignupSwitch>
         <SignupSwitch
           state={cocAccepted}
           stateUpdateFn={setCocAccepted}
-          label="Agree to code of conduct"
+          label={t('Auth.SignUp.coc-label')}
         >
-          I agree to the{' '}
+          {t('Auth.SignUp.i-agree')}{' '}
           <a
             href={routes.home()}
             target="_blank"
             className="text-gray-700 underline focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-0"
             rel="noreferrer"
           >
-            Code of Conduct
+            {t('Auth.SignUp.coc')}
           </a>
         </SignupSwitch>
 
         <SubmitButton
-          text="Sign up"
+          text={t('Auth.sign-up')}
           disabled={!(termsAccepted && cocAccepted)}
         />
       </Form>

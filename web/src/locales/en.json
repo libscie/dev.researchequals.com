@@ -40,5 +40,31 @@
     "help-p1": "Search for research output. Use",
     "help-p2": "for Authors, and ",
     "help-p3": "for help."
+  },
+  "Auth": {
+    "sign-up": "Sign Up",
+    "signing-up": "Signing up...",
+    "sign-up-success": "Account created!",
+    "error": "Error",
+    "existing-account": "Already have an account?",
+    "log-in": "Log in!",
+    "given-name": "Given Name",
+    "family-name": "Family Name",
+    "is-required": "is required",
+    "handle": "Username",
+    "email": "Email",
+    "password": "Password",
+    "password-placeholder": "Enter your password",
+    "password-pattern-error": "can only contain letters, numbers, and underscores",
+    "show-password": "Show password",
+    "SignUp": {
+      "i-agree": "I agree to the",
+      "and": "and to the processing of my personal data according to the",
+      "tos": "Terms of Use",
+      "tos-label": "Agree to terms of use and privacy policy",
+      "pp": "Privacy Policy",
+      "coc": "Code of Conduct",
+      "coc-label": "Agree to code of conduct"
+    }
   }
 }
