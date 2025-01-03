@@ -16,7 +16,7 @@ const ContentLayout = ({ children }: ContentLayoutProps) => {
     <>
       <a
         href="#main-content"
-        className="sr-only font-serif text-2xl font-medium focus:not-sr-only focus:absolute focus:left-0 focus:top-0 focus:bg-violet-200 focus:p-2 focus:text-violet-950"
+        className="sr-only z-[99999] font-serif text-2xl font-medium focus:not-sr-only focus:absolute focus:left-0 focus:top-0 focus:bg-violet-200 focus:p-2 focus:text-violet-950"
       >
         Skip to main content
       </a>
