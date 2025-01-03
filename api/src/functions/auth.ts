@@ -95,6 +95,10 @@ export const handler = async (
 
   interface UserAttributes {
     name: string
+    email: string
+    handle: string
+    givenName: string
+    familyName: string
   }
 
   const signupOptions: DbAuthHandlerOptions<
@@ -122,12 +126,29 @@ export const handler = async (
       salt,
       userAttributes: _userAttributes,
     }) => {
+      // TODO: validate handle
+      console.log(username)
+      console.log(_userAttributes.handle)
+
+      // Return user to be immediately logged in
       return db.user.create({
         data: {
           email: username,
           hashedPassword: hashedPassword,
           salt: salt,
-          // name: userAttributes.name
+          memberships: {
+            create: {
+              role: 'OWNER',
+              type: 'PRIMARY',
+              workspace: {
+                create: {
+                  handle: _userAttributes.handle.toLowerCase(),
+                  givenName: _userAttributes.givenName,
+                  name: _userAttributes.familyName,
+                },
+              },
+            },
+          },
         },
       })
     },
