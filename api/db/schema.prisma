@@ -25,6 +25,10 @@ model User {
   credentials         UserCredential[]
   createdAt           DateTime         @default(now())
   updatedAt           DateTime         @updatedAt
+
+  type       UserType     @default(REGULAR)
+  //   memberships Membership[]
+  Membership Membership[]
 }
 
 model UserCredential {
@@ -34,4 +38,62 @@ model UserCredential {
   publicKey  Bytes
   transports String?
   counter    BigInt
+}
+
+enum UserType {
+  // Least to most privileges
+  REGULAR
+  SUPPORTING
+  MODERATOR
+  ADMINISTRATOR
+  SUPERADMIN
+}
+
+model Membership {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+
+  user        User           @relation(fields: [userId], references: [id])
+  userId      Int
+  role        MembershipRole @default(USER)
+  type        MembershipType @default(SECONDARY)
+  workspace   Workspace      @relation(fields: [workspaceId], references: [id])
+  workspaceId Int
+
+  @@unique([userId, workspaceId])
+}
+
+enum MembershipRole {
+  // Least to most privileges
+  USER
+  ADMIN
+  OWNER
+}
+
+enum MembershipType {
+  PRIMARY
+  SECONDARY
+}
+
+model Workspace {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+
+  type      WorkspaceType @default(INDIVIDUAL)
+  handle    String        @unique
+  givenName String?
+  name      String
+
+  avatar String @default("https://upload.wikimedia.org/wikipedia/commons/2/24/Missing_avatar.svg")
+  // bio           String?
+  // pronouns      String?       @db.VarChar(20)
+  // url           String?
+  // orcid         String?
+
+  Membership Membership[]
+}
+
+enum WorkspaceType {
+  INDIVIDUAL
+  GROUP
 }
