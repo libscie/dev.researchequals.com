@@ -14,7 +14,9 @@ const HomePage = () => {
         title={t('HomePage.title')}
         description={t('HomePage.description')}
       />
-      <h1 className="mx-auto mt-8 text-center">{t('HomePage.hero')}</h1>
+      <h1 className="mx-auto mt-8 text-center text-2xl md:text-6xl">
+        {t('HomePage.hero')}
+      </h1>
       <div className="mx-auto max-w-4xl">
         <QuickSearch />
       </div>

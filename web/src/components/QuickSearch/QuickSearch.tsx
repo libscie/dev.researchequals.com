@@ -27,10 +27,10 @@ export default function QuickSearch() {
   const { loading, projects, users } = useQuickSearch(rawQuery)
 
   const handleSelect = (value: string) => {
-    if (value.startsWith('https://')) {
-      setRawQuery('')
-      window.open(value, '_blank', 'noopener,noreferrer')
-    }
+    // if (value.startsWith('https://')) {
+    setRawQuery('')
+    window.open(value, '_blank', 'noopener,noreferrer')
+    // }
   }
 
   return (
