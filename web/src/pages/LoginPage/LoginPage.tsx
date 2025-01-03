@@ -1,18 +1,18 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import {
   Form,
   Label,
   TextField,
   PasswordField,
-  Submit,
   FieldError,
 } from '@redwoodjs/forms'
 import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
 import { toast, Toaster } from '@redwoodjs/web/toast'
 
 import { useAuth } from 'src/auth'
+import AuthContainer from 'src/components/AuthContainer/AuthContainer'
+import SubmitButton from 'src/components/SubmitButton/SubmitButton'
 
 const WELCOME_MESSAGE = 'Welcome back!'
 const REDIRECT = routes.home()
@@ -44,12 +44,6 @@ const LoginPage = ({ type }) => {
     }
   }, [loading, isAuthenticated])
 
-  // focus on the username field as soon as the page loads
-  const usernameRef = useRef()
-  useEffect(() => {
-    usernameRef.current && usernameRef.current.focus()
-  }, [])
-
   const onSubmit = async (data) => {
     const webAuthnSupported = await webAuthn.isSupported()
 
@@ -57,7 +51,7 @@ const LoginPage = ({ type }) => {
       setShouldShowWebAuthn(true)
     }
     const response = await logIn({
-      username: data.username,
+      username: data.email,
       password: data.password,
     })
 
@@ -112,21 +106,17 @@ const LoginPage = ({ type }) => {
 
   const AuthWebAuthnPrompt = () => {
     return (
-      <div className="rw-webauthn-wrapper">
-        <h2>WebAuthn Login Enabled</h2>
-        <p>Log in with your fingerprint, face or PIN</p>
-        <div className="rw-button-group">
-          <button className="rw-button rw-button-blue" onClick={onAuthenticate}>
-            Open Authenticator
-          </button>
-        </div>
+      <div className="rw-button-group">
+        <button className="rw-button rw-button-blue" onClick={onAuthenticate}>
+          Open Authenticator
+        </button>
       </div>
     )
   }
 
   const RegisterWebAuthnPrompt = () => (
-    <div className="rw-webauthn-wrapper">
-      <h2>No more Passwords!</h2>
+    <div>
+      <h3>No more Passwords!</h3>
       <p>
         Depending on your device you can log in with your fingerprint, face or
         PIN next time.
@@ -143,61 +133,60 @@ const LoginPage = ({ type }) => {
   )
 
   const PasswordForm = () => (
-    <Form onSubmit={onSubmit} className="rw-form-wrapper">
-      <Label
-        name="username"
-        className="rw-label"
-        errorClassName="rw-label rw-label-error"
+    <Form onSubmit={onSubmit} className="flex flex-col">
+      {/* Email */}
+      <span>
+        <Label
+          name="email"
+          className="auth-label"
+          errorClassName="auth-label-error"
+        >
+          Email <FieldError name="email" className="" />
+        </Label>
+        <TextField
+          name="email"
+          className="auth-input"
+          errorClassName="auth-input-error"
+          validation={{
+            required: {
+              value: true,
+              message: 'is required',
+            },
+          }}
+          placeholder="test@example.com"
+        />
+      </span>
+      {/* Password */}
+      <span>
+        <Label
+          name="password"
+          className="auth-label"
+          errorClassName="auth-label-error"
+        >
+          Password <FieldError name="password" className="" />
+        </Label>
+        <PasswordField
+          name="password"
+          className="auth-input"
+          errorClassName="auth-input-error"
+          validation={{
+            required: {
+              value: true,
+              message: 'is required',
+            },
+          }}
+          placeholder="Enter your password"
+          autoComplete="current-password"
+        />
+      </span>
+      {/* Forgot */}
+      <Link
+        to={routes.forgotPassword()}
+        className="my-2 block text-sm underline"
       >
-        Username
-      </Label>
-      <TextField
-        name="username"
-        className="rw-input"
-        errorClassName="rw-input rw-input-error"
-        ref={usernameRef}
-        autoFocus
-        validation={{
-          required: {
-            value: true,
-            message: 'Username is required',
-          },
-        }}
-      />
-
-      <FieldError name="username" className="rw-field-error" />
-
-      <Label
-        name="password"
-        className="rw-label"
-        errorClassName="rw-label rw-label-error"
-      >
-        Password
-      </Label>
-      <PasswordField
-        name="password"
-        className="rw-input"
-        errorClassName="rw-input rw-input-error"
-        autoComplete="current-password"
-        validation={{
-          required: {
-            value: true,
-            message: 'Password is required',
-          },
-        }}
-      />
-
-      <div className="rw-forgot-link">
-        <Link to={routes.forgotPassword()} className="rw-forgot-link">
-          Forgot Password?
-        </Link>
-      </div>
-
-      <FieldError name="password" className="rw-field-error" />
-
-      <div className="rw-button-group">
-        <Submit className="rw-button rw-button-blue">Login</Submit>
-      </div>
+        Forgot Password?
+      </Link>
+      <SubmitButton text="Log in" />
     </Form>
   )
 
@@ -217,9 +206,9 @@ const LoginPage = ({ type }) => {
     if (showWebAuthn) {
       if (webAuthn.isEnabled()) {
         return (
-          <div className="rw-login-link">
-            <span>or login with </span>{' '}
-            <a href="?type=password" className="rw-link">
+          <div>
+            <span>Alternatively, log in with </span>{' '}
+            <a href="?type=password" className="underline">
               username and password
             </a>
           </div>
@@ -227,9 +216,9 @@ const LoginPage = ({ type }) => {
       }
     } else {
       return (
-        <div className="rw-login-link">
+        <div>
           <span>Don&apos;t have an account?</span>{' '}
-          <Link to={routes.signup()} className="rw-link">
+          <Link to={routes.signup()} className="underline">
             Sign up!
           </Link>
         </div>
@@ -242,25 +231,10 @@ const LoginPage = ({ type }) => {
   }
 
   return (
-    <>
-      <Metadata title="Login" />
-
-      <main className="rw-main">
-        <Toaster toastOptions={{ className: 'rw-toast', duration: 6000 }} />
-        <div className="rw-scaffold rw-login-container">
-          <div className="rw-segment">
-            <header className="rw-segment-header">
-              <h2 className="rw-heading rw-heading-secondary">Login</h2>
-            </header>
-
-            <div className="rw-segment-main">
-              <div className="rw-form-wrapper">{formToRender()}</div>
-            </div>
-          </div>
-          {linkToRender()}
-        </div>
-      </main>
-    </>
+    <AuthContainer title="Log in" subtitle={linkToRender()}>
+      <Toaster toastOptions={{ className: 'rw-toast', duration: 6000 }} />
+      <div>{formToRender()}</div>
+    </AuthContainer>
   )
 }
 

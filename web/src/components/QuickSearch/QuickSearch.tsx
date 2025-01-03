@@ -16,12 +16,9 @@ import {
 import { useTranslation } from 'react-i18next'
 
 import useQuickSearch from 'src/hooks/useQuickSearch'
+import { classNames } from 'src/utils'
 
 import Loader from '../Loader/Loader'
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 
 // Source: https://tailwindui.com/components/application-ui/navigation/command-palettes#component-540bdf1e4a0e2ec2f667a2c7c123ff0f
 export default function QuickSearch() {
