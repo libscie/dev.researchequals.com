@@ -16,7 +16,7 @@ const useQuickSearch = (rawQuery: string) => {
           const response = await fetch(
             `https://api.openalex.org/authors?search=${encodeURIComponent(
               query
-            )}&sort=relevance_score:desc&per-page=5&filter=has_orcid:true`
+            )}&sort=relevance_score:desc&per-page=5`
           )
           const data = await response.json()
           setUsers(data.results)
