@@ -8,6 +8,7 @@ import DataContainer from 'src/components/DataContainer/DataContainer'
 import Loader from 'src/components/Loader/Loader'
 import MetadataContainer from 'src/components/MetadataContainer/MetadataContainer'
 import { fetchOpenAlexWork } from 'src/services/openAlex'
+import { uninvert } from 'src/utils'
 
 const OpenAlexWorkPage = ({ id }) => {
   const [data, setData] = useState(null)
@@ -39,8 +40,12 @@ const OpenAlexWorkPage = ({ id }) => {
 
   return (
     <>
-      <Metadata title={data.title} description={data.description} />
-      <Metadata ogTitle={data.title} ogDescription={data.description} />
+      <Metadata
+        title={data.title}
+        description={uninvert(data.abstract_inverted_index)}
+        og-description={uninvert(data.abstract_inverted_index)}
+        og-title={data.title}
+      />
       <article className="h-full w-full lg:flex">
         <MetadataContainer>
           <h1 className="text-3xl">{data.title}</h1>
@@ -70,7 +75,7 @@ const OpenAlexWorkPage = ({ id }) => {
               src={data.primary_location.pdf_url}
               // width="100%"
               // height="100%"
-              className="h-full w-full"
+              className="h-[100vh] w-full"
               title="PDF Viewer"
             />
           ) : (

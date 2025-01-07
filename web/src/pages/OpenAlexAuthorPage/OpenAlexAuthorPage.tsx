@@ -5,6 +5,7 @@ import { Metadata } from '@redwoodjs/web'
 import DataContainer from 'src/components/DataContainer/DataContainer'
 import Loader from 'src/components/Loader/Loader'
 import MetadataContainer from 'src/components/MetadataContainer/MetadataContainer'
+import OpenAlexWorksCell from 'src/components/OpenAlexWorksCell/OpenAlexWorksCell'
 import { fetchOpenAlexAuthor } from 'src/services/openAlex'
 
 const OpenAlexAuthorPage = ({ id }) => {
@@ -41,12 +42,14 @@ const OpenAlexAuthorPage = ({ id }) => {
       <Metadata ogTitle={data.display_name} ogDescription={data.description} />
       <main className="h-full w-full lg:flex">
         <MetadataContainer>
-          <h1 className="text-center text-3xl">{data.display_name}</h1>
+          <h1 className="text-left text-3xl">{data.display_name}</h1>
           <span className="m-1 inline-flex items-center rounded-md bg-violet-50 px-2 py-1 text-sm font-normal text-violet-950 ring-1 ring-inset ring-violet-950/10">
             {data.orcid}
           </span>
         </MetadataContainer>
-        <DataContainer> </DataContainer>
+        <DataContainer>
+          <OpenAlexWorksCell url={data.works_api_url} />
+        </DataContainer>
       </main>
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </>
