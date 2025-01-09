@@ -10,7 +10,9 @@ type ContentLayoutProps = {
 }
 
 const ContentLayout = ({ children }: ContentLayoutProps) => {
-  const cookiesAccepted = getCookieConsentValue()
+  const cookiesAccepted = getCookieConsentValue(
+    process.env.APP_NAME || 'ResearchEquals Instance Cookie'
+  )
 
   return (
     <>
