@@ -13,6 +13,7 @@ services:
     depends_on:
       - db
       - smtp
+      - s3
     environment:
       - DATABASE_URL=mysql://redwood:redwood@db:3306/redwood
       - TEST_DATABASE_URL=mysql://redwood:redwood@db:3306/redwood_test
@@ -22,6 +23,10 @@ services:
       - REDWOOD_API_HOST=0.0.0.0
       - SMTP_HOST=smtp
       - SMTP_PORT=1025
+      - S3_ENDPOINT=http://s3:9000
+      - S3_ACCESS_KEY=minioadmin
+      - S3_SECRET_KEY=minioadmin
+      - S3_BUCKET=my-bucket
 
   db:
     image: mysql:8.0
@@ -42,6 +47,19 @@ services:
       - '1025:1025'  # SMTP server
       - '8025:8025'  # Web UI
 
+  s3:
+    image: minio/minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports:
+      - '9000:9000'
+      - '9001:9001'
+    volumes:
+      - s3-data:/data
+
 volumes:
   node_modules:
   mysql:
+  s3-data:
