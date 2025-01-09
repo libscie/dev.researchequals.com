@@ -7,7 +7,7 @@ const CookieBanner = () => {
   return (
     <CookieConsent
       disableStyles={true}
-      // cookieName="myAwesomeCookieName2"
+      cookieName={process.env.APP_NAME || 'ResearchEquals Instance Cookie'}
       buttonClasses="rounded-full p-2 px-4 hover:bg-emerald-800 hover:text-white"
       declineButtonClasses="rounded-full p-2 px-4 hover:bg-red-800 hover:text-white"
       containerClasses="flex w-full pl-2"

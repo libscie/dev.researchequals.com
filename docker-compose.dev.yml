@@ -16,7 +16,7 @@ services:
       - DATABASE_URL=mysql://redwood:redwood@db:3306/redwood
       - TEST_DATABASE_URL=mysql://redwood:redwood@db:3306/redwood_test
       - SESSION_SECRET=super_secret_session_key_change_me_in_production_please
-      - CI=
+      - APP_NAME=researchequals-test-env
       - NODE_ENV=development
       - REDWOOD_API_HOST=0.0.0.0
 
