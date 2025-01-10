@@ -15,8 +15,8 @@ services:
       - smtp
       - s3
     environment:
-      - DATABASE_URL=mysql://redwood:redwood@db:3306/redwood
-      - TEST_DATABASE_URL=mysql://redwood:redwood@db:3306/redwood_test
+      - DATABASE_URL=mysql://redwood:redwood@db:4406/redwood
+      - TEST_DATABASE_URL=mysql://redwood:redwood@db:4406/redwood_test
       - SESSION_SECRET=super_secret_session_key_change_me_in_production_please
       - APP_NAME=researchequals-test-env
       - NODE_ENV=development
@@ -36,7 +36,7 @@ services:
       MYSQL_USER: redwood
       MYSQL_PASSWORD: redwood
     ports:
-      - '3306:3306'
+      - '4406:4406'
     volumes:
       - mysql:/var/lib/mysql
       - ./mysql-init:/docker-entrypoint-initdb.d
