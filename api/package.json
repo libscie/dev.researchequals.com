@@ -8,5 +8,8 @@
     "@redwoodjs/auth-dbauth-api": "8.4.2",
     "@redwoodjs/graphql-server": "8.4.2",
     "@simplewebauthn/server": "^7"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.3.0"
   }
 }

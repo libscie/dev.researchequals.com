@@ -1,4 +1,5 @@
-// import { db } from 'api/src/lib/db'
+import { faker } from '@faker-js/faker'
+import { db } from 'api/src/lib/db'
 
 // Manually apply seeds via the `yarn rw prisma db seed` command.
 //
@@ -7,20 +8,52 @@
 //
 // See https://redwoodjs.com/docs/database-seeds for more info
 
+const createRandomWorkspace = () => {
+  const givenName = faker.person.firstName()
+  const name = faker.person.lastName()
+  const handle = faker.internet.username(givenName, name)
+  const avatar = faker.image.avatar()
+
+  return {
+    givenName,
+    name,
+    handle,
+    avatar,
+  }
+}
+
 export default async () => {
   try {
-    // Create your database records here! For example, seed some users:
-    //
-    // const users = [
-    //   { name: 'Alice', email: 'alice@redwoodjs.com' },
-    //   { name: 'Bob', email: 'bob@redwoodjs.com' },
-    // ]
-    //
-    // await db.user.createMany({ data: users })
+    const workspaces = Array.from({ length: 50 }, createRandomWorkspace)
 
-    console.info(
-      '\n  No seed data, skipping. See scripts/seed.ts to start seeding your database!\n'
-    )
+    for (const workspace of workspaces) {
+      await db.workspace.create({
+        data: {
+          handle: workspace.handle,
+          givenName: workspace.givenName,
+          name: workspace.name,
+          avatar: workspace.avatar,
+          Membership: {
+            create: {
+              role: 'OWNER',
+              type: 'PRIMARY',
+              user: {
+                create: {
+                  email: faker.internet.email(
+                    workspace.givenName,
+                    workspace.name
+                  ),
+                  hashedPassword: 'hashedpassword', // Replace with actual hashed password
+                  salt: 'salt', // Replace with actual salt
+                },
+              },
+            },
+          },
+        },
+      })
+    }
+
+    console.info('50 workspaces created')
   } catch (error) {
     console.error(error)
   }
