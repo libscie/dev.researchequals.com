@@ -14,22 +14,32 @@ const Navigation = () => {
 
   return (
     <nav className="flex flex-grow items-center justify-between">
-      <div className="hidden rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
-        <Link to={routes.home()}>{t('HomePage.title')}</Link>
-      </div>
+      <Link to={routes.home()}>
+        <div className="hidden rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
+          {t('HomePage.title')}
+        </div>
+      </Link>
       <div className="mx-auto flex flex-grow text-left sm:inline sm:text-center [&>a]:text-violet-950 [&>a]:no-underline hover:[&>a]:text-white">
-        <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
-          <Link to={routes.home()}>{t('FindPage.title')}</Link>
-        </div>
-        <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
-          <Link to={routes.home()}>{t('CollectPage.title')}</Link>
-        </div>
-        <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
-          <Link to={routes.home()}>{t('WritePage.title')}</Link>
-        </div>
-        <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
-          <Link to={routes.home()}>{t('OrganizePage.title')}</Link>
-        </div>
+        <Link to={routes.find()}>
+          <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
+            {t('FindPage.title')}
+          </div>
+        </Link>
+        <Link to={routes.home()}>
+          <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
+            {t('CollectPage.title')}
+          </div>
+        </Link>
+        <Link to={routes.home()}>
+          <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
+            {t('WritePage.title')}
+          </div>
+        </Link>
+        <Link to={routes.home()}>
+          <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
+            {t('OrganizePage.title')}
+          </div>
+        </Link>
       </div>
       {loading ? (
         <Loader stroke="#000" />
