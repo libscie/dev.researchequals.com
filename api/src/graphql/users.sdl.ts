@@ -7,7 +7,6 @@ export const schema = gql`
     resetToken: String
     resetTokenExpiresAt: DateTime
     webAuthnChallenge: String
-    credentials: [UserCredential]!
     createdAt: DateTime!
     updatedAt: DateTime!
     type: UserType!
