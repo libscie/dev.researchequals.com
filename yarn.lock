@@ -1705,6 +1705,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@carbon/icon-helpers@npm:^10.54.0":
+  version: 10.54.0
+  resolution: "@carbon/icon-helpers@npm:10.54.0"
+  dependencies:
+    "@ibm/telemetry-js": "npm:^1.5.0"
+  checksum: 10c0/320318028f24e3a63f81be20e9bd0e74853b4a7fb3a5314ad11f8214f3f3ca3aba51a45b2ae6c46e51d46121ccf94d7cad9a96b5e2d45a364d1344101db6f809
+  languageName: node
+  linkType: hard
+
+"@carbon/icons-react@npm:^11.53.0":
+  version: 11.53.0
+  resolution: "@carbon/icons-react@npm:11.53.0"
+  dependencies:
+    "@carbon/icon-helpers": "npm:^10.54.0"
+    "@ibm/telemetry-js": "npm:^1.5.0"
+    prop-types: "npm:^15.7.2"
+  peerDependencies:
+    react: ">=16"
+  checksum: 10c0/f218ae63ec3bd111baa57f3b909cb77f47c00bac0fbb068b3d5091869172d5cbea19d2b758f47b60e3e17accca8fc562419b5c9e460cd50d02c83672095da4e8
+  languageName: node
+  linkType: hard
+
 "@cbor-extract/cbor-extract-darwin-arm64@npm:2.2.0":
   version: 2.2.0
   resolution: "@cbor-extract/cbor-extract-darwin-arm64@npm:2.2.0"
@@ -3745,6 +3767,15 @@ __metadata:
   version: 2.0.3
   resolution: "@humanwhocodes/object-schema@npm:2.0.3"
   checksum: 10c0/80520eabbfc2d32fe195a93557cef50dfe8c8905de447f022675aaf66abc33ae54098f5ea78548d925aa671cd4ab7c7daa5ad704fe42358c9b5e7db60f80696c
+  languageName: node
+  linkType: hard
+
+"@ibm/telemetry-js@npm:^1.5.0":
+  version: 1.8.0
+  resolution: "@ibm/telemetry-js@npm:1.8.0"
+  bin:
+    ibmtelemetry: dist/collect.js
+  checksum: 10c0/4e417594dbc63da64a7b8160a1af777674f023a5af0a4e0c6f4cba991bf0a8c99d098a1c3d9f3bb4fbe3b70f59097f9169bf4ca80d8405927dea0b7b0bafd432
   languageName: node
   linkType: hard
 
@@ -22182,6 +22213,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
+    "@carbon/icons-react": "npm:^11.53.0"
     "@headlessui/react": "npm:^2.2.0"
     "@heroicons/react": "npm:^2.2.0"
     "@redwoodjs/auth-dbauth-web": "npm:8.4.2"

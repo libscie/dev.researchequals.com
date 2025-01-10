@@ -11,6 +11,7 @@
     ]
   },
   "dependencies": {
+    "@carbon/icons-react": "^11.53.0",
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
     "@redwoodjs/auth-dbauth-web": "8.4.2",
