@@ -17,6 +17,7 @@ const Routes = () => {
   return (
     <Router useAuth={useAuth}>
       <Set wrap={ContentLayout}>
+        <Route path="/@{handle}" page={HandlePage} name="handle" />
         <Route path="/https://openalex.org/W{id}" page={OpenAlexWorkPage} name="openAlexWork" />
         <Route path="/https://openalex.org/A{id}" page={OpenAlexAuthorPage} name="openAlexAuthor" />
         <Route path="/" page={HomePage} name="home" />

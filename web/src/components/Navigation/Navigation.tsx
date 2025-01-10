@@ -50,7 +50,7 @@ const Navigation = () => {
               return (
                 <MenuItem key={membership.workspace.handle}>
                   <Link
-                    to={routes.home()}
+                    to={routes.handle({ handle: membership.workspace.handle })}
                     className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-violet-950 data-[focus]:text-white"
                   >
                     <img
