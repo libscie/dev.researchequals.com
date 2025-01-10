@@ -225,11 +225,13 @@ export const handler = async (
       expires: 60 * 60 * 24 * 365 * 10,
       name: 'Redwood Application',
       domain:
-        process.env.NODE_ENV === 'development' ? 'localhost' : 'server.com',
+        process.env.NODE_ENV === 'development'
+          ? 'localhost'
+          : 'dev.researchequals.com',
       origin:
         process.env.NODE_ENV === 'development'
           ? 'http://localhost:8910'
-          : 'https://server.com',
+          : 'https://dev.researchequals.com',
       type: 'platform',
       timeout: 60000,
       credentialFields: {
