@@ -16,6 +16,7 @@ import ContentLayout from './layouts/ContentLayout/ContentLayout'
 const Routes = () => {
   return (
     <Router useAuth={useAuth}>
+      <Route path="/find" page={FindPage} name="find" />
       <Set wrap={ContentLayout}>
         <Route path="/" page={HomePage} name="home" />
         <Route path="/@{handle:String}" page={HandlePage} name="handle" />
