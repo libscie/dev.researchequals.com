@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next'
 
 import { Metadata } from '@redwoodjs/web'
 
-import BentoBox from 'src/components/BentoBox/BentoBox'
 import QuickSearch from 'src/components/QuickSearch/QuickSearch'
 
 const HomePage = () => {
@@ -20,7 +19,6 @@ const HomePage = () => {
       <div className="mx-auto max-w-4xl">
         <QuickSearch />
       </div>
-      <BentoBox />
     </>
   )
 }
