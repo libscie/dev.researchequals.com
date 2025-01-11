@@ -78,6 +78,7 @@ enum MembershipType {
 model Workspace {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
 
   type      WorkspaceType @default(INDIVIDUAL)
   handle    String        @unique
@@ -96,4 +97,13 @@ model Workspace {
 enum WorkspaceType {
   INDIVIDUAL
   GROUP
+}
+
+// https://github.com/libscie/ResearchEquals.com/blob/3bcf091a7af0a43a48a2ff20c4da4443b53497e1/db/schema.prisma#L15
+model Works {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  title     String
+
+  // Authors Authorship[]
 }
