@@ -1,3 +1,4 @@
+// https://fakerjs.dev
 import { faker } from '@faker-js/faker'
 import { db } from 'api/src/lib/db'
 
