@@ -16,10 +16,10 @@ import ContentLayout from './layouts/ContentLayout/ContentLayout'
 const Routes = () => {
   return (
     <Router useAuth={useAuth}>
-      <Route path="/find" page={FindPage} name="find" />
       <Set wrap={ContentLayout}>
         <Route path="/" page={HomePage} name="home" />
         <Route path="/@{handle:String}" page={HandlePage} name="handle" />
+        <Route path="/find" page={FindPage} name="find" />
         <Route path="/https://openalex.org/A{id}" page={OpenAlexAuthorPage} name="openAlexAuthor" />
         <Route path="/https://openalex.org/W{id}" page={OpenAlexWorkPage} name="openAlexWork" />
         <Route path="/settings" page={SettingsPage} name="settings" />
