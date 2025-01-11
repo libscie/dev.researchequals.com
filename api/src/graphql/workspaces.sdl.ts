@@ -16,7 +16,7 @@ export const schema = gql`
   }
 
   type Query {
-    workspaces: [Workspace!]! @requireAuth
+    workspaces: [Workspace!]! @skipAuth
     workspace(handle: String!): Workspace @skipAuth
   }
 

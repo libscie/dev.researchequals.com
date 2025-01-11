@@ -7,7 +7,9 @@ import type {
 import { db } from 'src/lib/db'
 
 export const workspaces: QueryResolvers['workspaces'] = () => {
-  return db.workspace.findMany()
+  return db.workspace.findMany({
+    orderBy: { updatedAt: 'desc' },
+  })
 }
 
 export const workspace: QueryResolvers['workspace'] = ({ handle }) => {
