@@ -23,12 +23,33 @@ model User {
   resetTokenExpiresAt DateTime?
   webAuthnChallenge   String?          @unique
   credentials         UserCredential[]
+  twoFactorSecret     String?
+  twoFactorEnabled    Boolean          @default(false)
   createdAt           DateTime         @default(now())
   updatedAt           DateTime         @updatedAt
 
   type        UserType     @default(REGULAR)
   //   memberships Membership[]
   memberships Membership[]
+  tokens      Token[]
+}
+
+model Token {
+  id          Int       @id @default(autoincrement())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  hashedToken String
+  type        TokenType
+  expiresAt   DateTime
+
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int
+
+  @@unique([hashedToken, type])
+}
+
+enum TokenType {
+  OTP
 }
 
 model UserCredential {
