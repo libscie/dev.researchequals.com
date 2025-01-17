@@ -29,7 +29,6 @@ const LoginPage = ({ type }) => {
   const [showWebAuthn, setShowWebAuthn] = useState(
     webAuthn.isEnabled() && type !== 'password'
   )
-
   // should redirect right after login or wait to show the webAuthn prompts?
   useEffect(() => {
     if (isAuthenticated && (!shouldShowWebAuthn || webAuthn.isEnabled())) {
@@ -59,8 +58,13 @@ const LoginPage = ({ type }) => {
       // auth details good, but user not logged in
       toast(response.message)
     } else if (response.error) {
+      const isHex64Char = /^[0-9a-f]{64}$/.test(response.error)
       // error while authenticating
-      toast.error(response.error)
+      if (isHex64Char) {
+        navigate(routes.verifyOtp({ token: response.error }))
+      } else {
+        toast.error(response.error)
+      }
     } else {
       // user logged in
       if (webAuthnSupported) {

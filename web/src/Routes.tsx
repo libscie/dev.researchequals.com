@@ -26,6 +26,9 @@ const Routes = () => {
         <Route path="/sitemap" page={SitemapPage} name="sitemap" />
       </Set>
       <Set wrap={AuthLayout}>
+        <Route path="/verify-2fa" page={Verify2FAPage} name="verify2Fa" />
+        <Route path="/verify-otp/{token}" page={VerifyOtpPage} name="verifyOtp" />
+        <Route path="/setup-2fa" page={Setup2FAPage} name="setup2Fa" />
         <Route path="/login" page={LoginPage} name="login" />
         <Route path="/signup" page={SignupPage} name="signup" />
         <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />

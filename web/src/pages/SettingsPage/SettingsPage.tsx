@@ -1,4 +1,5 @@
 // import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redwoodjs/router'
 import { Metadata } from '@redwoodjs/web'
 
 const SettingsPage = () => {
@@ -14,6 +15,11 @@ const SettingsPage = () => {
           My default route is named `settings`, link to me with:
           `<Link to={routes.settings()}>Settings</Link>`
       */}
+      <ul>
+        <li>
+          <Link to={routes.setup2Fa()}>Setup2FA</Link>
+        </li>
+      </ul>
     </>
   )
 }
