@@ -43,5 +43,14 @@ export const Failure = ({
 export const Success = ({
   workspace,
 }: CellSuccessProps<FindWorkspaceQuery, FindWorkspaceQueryVariables>) => {
-  return <div>{JSON.stringify(workspace)}</div>
+  return (
+    <main className="h-full w-full lg:flex">
+      {/* <MetadataContainer>
+        <AuthorMetadata />
+      </MetadataContainer> */}
+      <div className="w-full p-0">
+        <div className="max-w-2xl text-left">{workspace.handle}</div>
+      </div>
+    </main>
+  )
 }

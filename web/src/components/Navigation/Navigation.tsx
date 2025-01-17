@@ -35,11 +35,11 @@ const Navigation = () => {
             {t('WritePage.title')}
           </div>
         </Link>
-        <Link to={routes.home()}>
+        {/* <Link to={routes.home()}>
           <div className="rounded-full p-2 px-4 hover:bg-violet-950 hover:text-white sm:inline dark:hover:bg-violet-50 dark:hover:text-violet-950">
             {t('OrganizePage.title')}
           </div>
-        </Link>
+        </Link> */}
       </div>
       {loading ? (
         <Loader stroke="#000" />

@@ -33,7 +33,7 @@ export const Failure = ({ error }: CellFailureProps) => (
 
 export const Success = ({ workspaces }: CellSuccessProps<WorkspacesQuery>) => {
   return (
-    <ul className="">
+    <ul>
       {workspaces.map((item) => (
         <li key={item.id} className="p-4">
           <Link to={routes.handle({ handle: item.handle })}>
@@ -42,7 +42,7 @@ export const Success = ({ workspaces }: CellSuccessProps<WorkspacesQuery>) => {
                 <img
                   src={item.avatar}
                   alt={`${item.name}'s avatar`}
-                  className="mx-2 h-16 w-16 rounded-full"
+                  className="mx-2 h-16 w-16 rounded-full border-2 border-indigo-950"
                 />
               </span>
               <span className="flex-grow">
