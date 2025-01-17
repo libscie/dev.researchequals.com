@@ -7,9 +7,12 @@
     "@redwoodjs/api-server": "8.4.2",
     "@redwoodjs/auth-dbauth-api": "8.4.2",
     "@redwoodjs/graphql-server": "8.4.2",
-    "@simplewebauthn/server": "^7"
+    "@simplewebauthn/server": "^7",
+    "otpauth": "^9.3.6",
+    "qrcode": "^1.5.4"
   },
   "devDependencies": {
-    "@faker-js/faker": "^9.3.0"
+    "@faker-js/faker": "^9.3.0",
+    "@types/qrcode": "^1"
   }
 }
