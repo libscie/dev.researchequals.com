@@ -39,6 +39,7 @@ export const getCurrentUser = async (session: Decoded) => {
     select: {
       id: true,
       email: false,
+      twoFactorEnabled: true,
       memberships: {
         include: { workspace: true },
       },

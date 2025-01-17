@@ -1,3 +1,5 @@
+import crypto from 'crypto'
+
 import type { APIGatewayProxyEvent, Context } from 'aws-lambda'
 
 import { DbAuthHandler } from '@redwoodjs/auth-dbauth-api'
@@ -52,7 +54,22 @@ export const handler = async (
     // didn't validate their email yet), throw an error and it will be returned
     // by the `logIn()` function from `useAuth()` in the form of:
     // `{ message: 'Error message' }`
-    handler: (user) => {
+    handler: async (user) => {
+      if (user.twoFactorEnabled) {
+        const token = await db.token.create({
+          data: {
+            type: 'OTP',
+            hashedToken: crypto.randomBytes(32).toString('hex'), // Replace with actual hashed token
+            expiresAt: new Date(Date.now() + 1000 * 60 * 10), // Example: 10 minutes from now
+            user: {
+              connect: {
+                id: user.id,
+              },
+            },
+          },
+        })
+        throw new Error(token.hashedToken)
+      }
       return user
     },
 
