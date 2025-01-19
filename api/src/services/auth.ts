@@ -1,3 +1,5 @@
+import crypto from 'crypto'
+
 import OTPAuth from 'otpauth'
 import qrcode from 'qrcode'
 
@@ -71,7 +73,7 @@ export const verifyOtp = async ({
 }: {
   otpToken: string
   token: string
-}) => {
+}): Promise<string> => {
   // Hash the incoming otpToken to match stored tokens
   // Find the token in the database
   const dbToken = await db.token.findFirst({
@@ -85,7 +87,6 @@ export const verifyOtp = async ({
     },
   })
 
-  console.log(dbToken)
   if (!dbToken) {
     throw new Error('Invalid or expired OTP token')
   }
@@ -114,5 +115,19 @@ export const verifyOtp = async ({
     where: { id: dbToken.id },
   })
 
-  return true
+  // Create a session token for the user
+  const sessionToken = await db.token.create({
+    data: {
+      type: 'SESSION',
+      hashedToken: crypto.randomBytes(32).toString('hex'), // Replace with actual hashed token
+      expiresAt: new Date(Date.now() + 1000 * 30), // 30 seconds
+      user: {
+        connect: {
+          id: user.id,
+        },
+      },
+    },
+  })
+
+  return sessionToken.hashedToken
 }

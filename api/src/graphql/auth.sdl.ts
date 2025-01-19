@@ -7,6 +7,6 @@ export const schema = gql`
   type Mutation {
     setupTwoFactorAuth(userId: Int!): TwoFASetup! @requireAuth
     verifyTwoFactorAuth(userId: Int!, token: String!): Boolean! @requireAuth
-    verifyOtp(otpToken: String!, token: String!): Boolean! @skipAuth
+    verifyOtp(otpToken: String!, token: String!): String! @skipAuth
   }
 `

@@ -1,4 +1,4 @@
-import { navigate, routes } from '@redwoodjs/router'
+import { navigate } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
 
 const VERIFY_OTP_MUTATION = gql`
@@ -15,8 +15,10 @@ const VerifyOtp = ({ token }) => {
     e.preventDefault()
     try {
       const { data } = await verifyOtp({ variables: { otpToken, token } })
+      // alert(JSON.stringify(data.verifyOtp))
       if (data.verifyOtp) {
-        navigate(routes.home())
+        navigate(`/.netlify/functions/totp-session?token=${data.verifyOtp}`)
+        // navigate(routes.home())
       }
     } catch (err) {
       console.error(err)

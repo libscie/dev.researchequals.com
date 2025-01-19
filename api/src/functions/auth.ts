@@ -144,9 +144,6 @@ export const handler = async (
       userAttributes: _userAttributes,
     }) => {
       // TODO: validate handle
-      console.log(username)
-      console.log(_userAttributes.handle)
-
       // Return user to be immediately logged in
       return db.user.create({
         data: {
