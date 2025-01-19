@@ -16,13 +16,6 @@ const secureCookie = (user) => {
     'SameSite=Strict',
     `Secure=${process.env.NODE_ENV !== 'development'}`,
   ]
-  // select: {
-  //   id: true,
-  //   email: false,
-  //   twoFactorEnabled: true,
-  //   memberships: {
-  //     include: { workspace: true },
-  //   },
   const data = JSON.stringify({
     id: user.id,
     email: user.email,

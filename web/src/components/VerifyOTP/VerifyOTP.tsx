@@ -17,8 +17,8 @@ const VerifyOtp = ({ token }) => {
       const { data } = await verifyOtp({ variables: { otpToken, token } })
       // alert(JSON.stringify(data.verifyOtp))
       if (data.verifyOtp) {
-        navigate(`/.netlify/functions/totp-session?token=${data.verifyOtp}`)
-        // navigate(routes.home())
+        window.location.href = `/.netlify/functions/totp-session?token=${data.verifyOtp}`
+        // navigate(`/.netlify/functions/totp-session?token=${data.verifyOtp}`)
       }
     } catch (err) {
       console.error(err)
