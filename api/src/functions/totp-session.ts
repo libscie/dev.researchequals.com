@@ -38,6 +38,7 @@ export const handler = async (event) => {
     },
   })
 
+  console.log(sessionToken)
   if (sessionToken) {
     return {
       statusCode: 302,
