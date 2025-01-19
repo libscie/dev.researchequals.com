@@ -50,6 +50,7 @@ model Token {
 
 enum TokenType {
   OTP
+  SESSION
 }
 
 model UserCredential {
