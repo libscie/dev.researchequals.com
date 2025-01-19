@@ -3,6 +3,7 @@
 import { encryptSession } from '@redwoodjs/auth-dbauth-api'
 
 import { db } from 'src/lib/db'
+import { memberships } from 'src/services/memberships/memberships'
 
 const secureCookie = (user) => {
   const expires = new Date()
@@ -15,7 +16,19 @@ const secureCookie = (user) => {
     'SameSite=Strict',
     `Secure=${process.env.NODE_ENV !== 'development'}`,
   ]
-  const data = JSON.stringify({ id: user.id })
+  // select: {
+  //   id: true,
+  //   email: false,
+  //   twoFactorEnabled: true,
+  //   memberships: {
+  //     include: { workspace: true },
+  //   },
+  const data = JSON.stringify({
+    id: user.id,
+    email: user.email,
+    twoFactorEnabled: user.twoFactorEnabled,
+    memberships: user.memberships.map(memberships),
+  })
   const encrypted = encryptSession(data)
 
   return [`session_8911=${encrypted}`, ...cookieAttrs].join('; ')
@@ -34,16 +47,24 @@ export const handler = async (event) => {
       type: 'SESSION',
     },
     include: {
-      user: true,
+      user: {
+        select: {
+          id: true,
+          email: false,
+          twoFactorEnabled: true,
+          memberships: {
+            include: { workspace: true },
+          },
+        },
+      },
     },
   })
 
-  console.log(sessionToken)
   if (sessionToken) {
     return {
       statusCode: 302,
       headers: {
-        'Set-Cookie': secureCookie(sessionToken.user.id),
+        'Set-Cookie': secureCookie(sessionToken.user),
         Location: '/',
       },
     }
