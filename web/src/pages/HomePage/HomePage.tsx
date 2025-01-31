@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next'
 
 import { Metadata } from '@redwoodjs/web'
 
+import FileUpload from 'src/components/FileUpload/FileUpload'
 import QuickSearch from 'src/components/QuickSearch/QuickSearch'
 
 const HomePage = () => {
@@ -19,6 +20,11 @@ const HomePage = () => {
       <div className="mx-auto my-16 max-w-4xl">
         <QuickSearch />
       </div>
+      <FileUpload
+        onSuccess={(res) => {
+          alert(res)
+        }}
+      />
     </>
   )
 }
