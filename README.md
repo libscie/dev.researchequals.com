@@ -71,9 +71,13 @@ We also supply a Docker environment to get up and running. If you are unfamiliar
 docker compose -f docker-compose.dev.yml up
 
 # Then, connect to the container and migrate your database:
-docker compose -f ./docker-compose.dev.yml run --rm -it console /bin/bash
+# docker compose -f ./docker-compose.dev.yml run --rm -it console /bin/bash
+docker compose -f ./docker-compose.dev.yml run redwood /bin/bash
 # From within the docker container
 yarn rw prisma migrate dev
+
+docker exec -it <api-container-name> sh
+
 ```
 
 <!-- For more information on contributing to ResearchEquals, please see the contributing docs. -->
