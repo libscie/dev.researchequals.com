@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.738.0",
+    "@aws-sdk/s3-presigned-post": "^3.738.0",
     "@redwoodjs/api": "8.4.2",
     "@redwoodjs/api-server": "8.4.2",
     "@redwoodjs/auth-dbauth-api": "8.4.2",
